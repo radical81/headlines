@@ -40,7 +40,7 @@ class HeadlineItem: UICollectionViewCell {
   func initSubviews() {
     decorateThumbnail()
     decorateTitle()
-    decorateHeading()
+    decorateHorizontalStack()
     decorateSummary()
     decorateAuthor()
     decorateStackView()
@@ -92,7 +92,7 @@ class HeadlineItem: UICollectionViewCell {
     thumbnail.widthAnchor.constraint(equalToConstant: 50).isActive = true
   }
   
-  func decorateHeading() {
+  func decorateHorizontalStack() {
     horizontalStack.addArrangedSubview(thumbnail)
     horizontalStack.addArrangedSubview(title)
     horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
