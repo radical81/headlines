@@ -63,6 +63,7 @@ class HeadlineItem: UICollectionViewCell {
     }
   }
   
+  // MARK: - Decorate UI layout
   func decorateCell() {
     self.layer.borderColor = UIColor.lightGray.cgColor
     self.layer.borderWidth = 1
