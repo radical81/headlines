@@ -8,9 +8,27 @@
 import UIKit
 
 class HeadlinesViewController: UIViewController {
+  
 
+  /// The list of headlines, a collection view.
+  var headlinesList: HeadlinesList?
+  
+  /// The data source for the list.
+  var headlines: [HeadlineViewModel] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.addSubview(HeadlineItem(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)))
+    headlinesList = HeadlinesList(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+    headlinesList?.register(HeadlineItem.self, forCellWithReuseIdentifier: "HeadlineList")
+    headlinesList?.dataSource = self
+    headlinesList?.delegate = self
+    view.addSubview(headlinesList ?? UICollectionView())
+    fetchHeadlines()
+  }
+  
+  /// Fetch data/
+  func fetchHeadlines() {
+    //TODO: Real data
+    headlines = [HeadlineViewModel(Headline(title: "test", description: "testing", author: "rex", urlToImage: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_766206_17017494326985532.jpg"))]
   }
 }

@@ -18,6 +18,8 @@
 		863B73612B20759300639F25 /* SourcesSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B73602B20759300639F25 /* SourcesSelection.swift */; };
 		863B73632B2075A000639F25 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B73622B2075A000639F25 /* Article.swift */; };
 		863B73652B2075AC00639F25 /* SavedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B73642B2075AC00639F25 /* SavedItems.swift */; };
+		863B73682B207A8700639F25 /* HeadlinesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B73672B207A8700639F25 /* HeadlinesList.swift */; };
+		863B736A2B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863B73692B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift */; };
 		86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86810B5E2B201FF4001888FD /* TabBarViewController.swift */; };
 		86877EE62B200A0F008A190A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86877EE52B200A0F008A190A /* AppDelegate.swift */; };
 		86877EE82B200A0F008A190A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86877EE72B200A0F008A190A /* SceneDelegate.swift */; };
@@ -59,6 +61,8 @@
 		863B73602B20759300639F25 /* SourcesSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourcesSelection.swift; sourceTree = "<group>"; };
 		863B73622B2075A000639F25 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		863B73642B2075AC00639F25 /* SavedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItems.swift; sourceTree = "<group>"; };
+		863B73672B207A8700639F25 /* HeadlinesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlinesList.swift; sourceTree = "<group>"; };
+		863B73692B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeadlinesViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		86810B5E2B201FF4001888FD /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		86877EE22B200A0F008A190A /* ArticlesHeadlines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ArticlesHeadlines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86877EE52B200A0F008A190A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -185,6 +189,7 @@
 			children = (
 				863B73622B2075A000639F25 /* Article.swift */,
 				863B735E2B20758300639F25 /* HeadlineItem.swift */,
+				863B73672B207A8700639F25 /* HeadlinesList.swift */,
 				863B73642B2075AC00639F25 /* SavedItems.swift */,
 				863B73602B20759300639F25 /* SourcesSelection.swift */,
 			);
@@ -211,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				863B734E2B202DBB00639F25 /* HeadlinesViewController.swift */,
+				863B73692B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift */,
 				86877EE92B200A0F008A190A /* MainViewController.swift */,
 				863B73522B202DDB00639F25 /* SavedViewController.swift */,
 				863B73502B202DCD00639F25 /* SourcesViewController.swift */,
@@ -356,7 +362,9 @@
 				86877EF02B200A0F008A190A /* ArticlesHeadlines.xcdatamodeld in Sources */,
 				863B735F2B20758300639F25 /* HeadlineItem.swift in Sources */,
 				86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */,
+				863B736A2B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift in Sources */,
 				863B73552B20456500639F25 /* Headline.swift in Sources */,
+				863B73682B207A8700639F25 /* HeadlinesList.swift in Sources */,
 				863B73612B20759300639F25 /* SourcesSelection.swift in Sources */,
 				863B735A2B2047B600639F25 /* UIImageViewExtension.swift in Sources */,
 				863B73572B2045EC00639F25 /* HeadlineViewModel.swift in Sources */,
