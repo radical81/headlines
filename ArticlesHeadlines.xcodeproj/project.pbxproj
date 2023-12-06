@@ -30,6 +30,9 @@
 		86877F002B200A12008A190A /* ArticlesHeadlinesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86877EFF2B200A12008A190A /* ArticlesHeadlinesTests.swift */; };
 		86877F0A2B200A12008A190A /* ArticlesHeadlinesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86877F092B200A12008A190A /* ArticlesHeadlinesUITests.swift */; };
 		86877F0C2B200A12008A190A /* ArticlesHeadlinesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86877F0B2B200A12008A190A /* ArticlesHeadlinesUITestsLaunchTests.swift */; };
+		86EF965D2B2135150062C877 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF965C2B2135150062C877 /* Source.swift */; };
+		86EF965F2B2136440062C877 /* SourceItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF965E2B2136440062C877 /* SourceItem.swift */; };
+		86EF96612B2137420062C877 /* SourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96602B2137420062C877 /* SourceViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,9 @@
 		86877F052B200A12008A190A /* ArticlesHeadlinesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticlesHeadlinesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86877F092B200A12008A190A /* ArticlesHeadlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesHeadlinesUITests.swift; sourceTree = "<group>"; };
 		86877F0B2B200A12008A190A /* ArticlesHeadlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesHeadlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		86EF965C2B2135150062C877 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
+		86EF965E2B2136440062C877 /* SourceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceItem.swift; sourceTree = "<group>"; };
+		86EF96602B2137420062C877 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +197,7 @@
 				863B735E2B20758300639F25 /* HeadlineItem.swift */,
 				863B73672B207A8700639F25 /* HeadlinesList.swift */,
 				863B73642B2075AC00639F25 /* SavedItems.swift */,
+				86EF965E2B2136440062C877 /* SourceItem.swift */,
 				863B73602B20759300639F25 /* SourcesSelection.swift */,
 			);
 			path = Views;
@@ -200,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				863B73562B2045EC00639F25 /* HeadlineViewModel.swift */,
+				86EF96602B2137420062C877 /* SourceViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -208,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				863B73542B20456500639F25 /* Headline.swift */,
+				86EF965C2B2135150062C877 /* Source.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -355,12 +364,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86EF965D2B2135150062C877 /* Source.swift in Sources */,
 				863B73652B2075AC00639F25 /* SavedItems.swift in Sources */,
 				86877EEA2B200A0F008A190A /* MainViewController.swift in Sources */,
 				86877EE62B200A0F008A190A /* AppDelegate.swift in Sources */,
 				863B734F2B202DBB00639F25 /* HeadlinesViewController.swift in Sources */,
 				86877EF02B200A0F008A190A /* ArticlesHeadlines.xcdatamodeld in Sources */,
 				863B735F2B20758300639F25 /* HeadlineItem.swift in Sources */,
+				86EF965F2B2136440062C877 /* SourceItem.swift in Sources */,
 				86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */,
 				863B736A2B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift in Sources */,
 				863B73552B20456500639F25 /* Headline.swift in Sources */,
@@ -372,6 +383,7 @@
 				86877EE82B200A0F008A190A /* SceneDelegate.swift in Sources */,
 				863B73532B202DDB00639F25 /* SavedViewController.swift in Sources */,
 				863B73512B202DCD00639F25 /* SourcesViewController.swift in Sources */,
+				86EF96612B2137420062C877 /* SourceViewModel.swift in Sources */,
 				863B73632B2075A000639F25 /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
