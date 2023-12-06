@@ -14,18 +14,7 @@ class HeadlineItem: UICollectionViewCell {
   // MARK: - Data source
   var headline: HeadlineViewModel? {
     didSet {
-      guard let headline = headline else {
-        return
-      }
-      title.text = headline.title
-      summary.text = headline.description
-      author.text = headline.author
-      guard let url = headline.imageUrl else {
-        return
-      }
-      Task {
-        try await thumbnail.loadFromUrl(url)
-      }
+      updateWithData()
     }
   }
   
@@ -56,6 +45,22 @@ class HeadlineItem: UICollectionViewCell {
     decorateAuthor()
     decorateStackView()
     addSubview(stackView)
+  }
+  
+  /// Updates UI with data from view model.
+  func updateWithData() {
+    guard let headline = headline else {
+      return
+    }
+    title.text = headline.title
+    summary.text = headline.description
+    author.text = headline.author
+    guard let url = headline.imageUrl else {
+      return
+    }
+    Task {
+      try await thumbnail.loadFromUrl(url)
+    }
   }
   
   func decorateCell() {
