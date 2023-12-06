@@ -30,7 +30,7 @@ class HeadlineItem: UICollectionViewCell {
   }
   
   func initSubviews() {
-    decorateLabel()
+    decorateTitle()
     addSubview(title)
   }
   
@@ -40,7 +40,7 @@ class HeadlineItem: UICollectionViewCell {
     self.layer.cornerRadius = 5
   }
   
-  func decorateLabel() {
+  func decorateTitle() {
     title.frame = CGRect(x: 0, y: 20, width: self.bounds.width, height: 20)
     title.textAlignment = .center
     title.text = headline?.title ?? "No title"
