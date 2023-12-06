@@ -43,7 +43,7 @@ class HeadlineItem: UICollectionViewCell {
     decorateHorizontalStack()
     decorateSummary()
     decorateAuthor()
-    decorateStackView()
+    decorateVerticalStack()
     addSubview(verticalStack)
   }
   
@@ -70,7 +70,7 @@ class HeadlineItem: UICollectionViewCell {
     self.layer.cornerRadius = 5
   }
   
-  func decorateStackView() {
+  func decorateVerticalStack() {
     verticalStack.addArrangedSubview(horizontalStack)
     verticalStack.addArrangedSubview(summary)
     verticalStack.addArrangedSubview(author)
