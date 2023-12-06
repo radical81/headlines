@@ -12,17 +12,17 @@ class HeadlinesList: UICollectionView {
   init(frame: CGRect) {
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     layout.sectionInset = UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
-    layout.itemSize = CGSize(width: 60, height: 60)
+    layout.itemSize = CGSize(width: frame.size.width - 20, height: 200)
     super.init(frame: frame, collectionViewLayout: layout)
   }
   
-  override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-    super.init(frame: frame, collectionViewLayout: layout)
-    self.backgroundColor = .systemBackground
+  var widestCellWidth: CGFloat {
+      let insets = contentInset.left + contentInset.right
+      return bounds.width - insets
   }
-  
+    
   required init?(coder: NSCoder) {
-    super.init(coder: coder)
+    fatalError("init(coder:) has not been implemented")
   }
   
 }

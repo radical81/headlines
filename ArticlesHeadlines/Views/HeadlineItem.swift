@@ -17,22 +17,32 @@ class HeadlineItem: UICollectionViewCell {
     }
   }
   
-  var title = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 21))
+  var title = UILabel()
   
   override init(frame: CGRect) {
     super.init(frame: frame)
-    self.backgroundColor = .blue
+    decorateCell()
     initSubviews()
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-    
+  
   func initSubviews() {
+    decorateLabel()
+    addSubview(title)
+  }
+  
+  func decorateCell() {
+    self.layer.borderColor = UIColor.lightGray.cgColor
+    self.layer.borderWidth = 1
+    self.layer.cornerRadius = 5
+  }
+  
+  func decorateLabel() {
+    title.frame = CGRect(x: 0, y: 20, width: self.bounds.width, height: 20)
     title.textAlignment = .center
     title.text = headline?.title ?? "No title"
-    title.sizeToFit()
-    addSubview(title)
   }
 }
