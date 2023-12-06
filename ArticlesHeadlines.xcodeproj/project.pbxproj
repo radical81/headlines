@@ -116,6 +116,18 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		863B73662B20781200639F25 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				86877EE52B200A0F008A190A /* AppDelegate.swift */,
+				86877EE72B200A0F008A190A /* SceneDelegate.swift */,
+				86877EF12B200A11008A190A /* Assets.xcassets */,
+				86877EF32B200A11008A190A /* LaunchScreen.storyboard */,
+				86877EF62B200A11008A190A /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		86877ED92B200A0F008A190A = {
 			isa = PBXGroup;
 			children = (
@@ -139,17 +151,13 @@
 		86877EE42B200A0F008A190A /* ArticlesHeadlines */ = {
 			isa = PBXGroup;
 			children = (
+				863B73662B20781200639F25 /* Supporting Files */,
 				863B735B2B2074A400639F25 /* Enums */,
 				86E99B762B200F9300F7BF26 /* Controllers */,
 				863B73582B20473D00639F25 /* Extensions */,
 				86E99B752B200F7F00F7BF26 /* Models */,
 				86E99B732B200E0D00F7BF26 /* Views */,
 				86E99B742B200E1300F7BF26 /* ViewModels */,
-				86877EE52B200A0F008A190A /* AppDelegate.swift */,
-				86877EE72B200A0F008A190A /* SceneDelegate.swift */,
-				86877EF12B200A11008A190A /* Assets.xcassets */,
-				86877EF32B200A11008A190A /* LaunchScreen.storyboard */,
-				86877EF62B200A11008A190A /* Info.plist */,
 				86877EEE2B200A0F008A190A /* ArticlesHeadlines.xcdatamodeld */,
 			);
 			path = ArticlesHeadlines;
@@ -531,7 +539,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ArticlesHeadlines/Info.plist;
+				INFOPLIST_FILE = "ArticlesHeadlines/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -558,7 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ArticlesHeadlines/Info.plist;
+				INFOPLIST_FILE = "ArticlesHeadlines/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
