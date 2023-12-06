@@ -9,8 +9,8 @@ import UIKit
 
 class SavedViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .systemBackground
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    view.addSubview(SavedItems(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)))
+  }
 }
