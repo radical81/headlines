@@ -22,9 +22,9 @@ class HeadlineItem: UICollectionViewCell {
   var title = UILabel()
   var summary = UILabel()
   var author = UILabel()
-  var stackView = UIStackView()
+  var verticalStack = UIStackView()
   var thumbnail = UIImageView(image: UIImage(systemName: "photo"))
-  var heading = UIStackView()
+  var horizontalStack = UIStackView()
   
   // MARK: - Methods
   override init(frame: CGRect) {
@@ -44,7 +44,7 @@ class HeadlineItem: UICollectionViewCell {
     decorateSummary()
     decorateAuthor()
     decorateStackView()
-    addSubview(stackView)
+    addSubview(verticalStack)
   }
   
   /// Updates UI with data from view model.
@@ -71,14 +71,14 @@ class HeadlineItem: UICollectionViewCell {
   }
   
   func decorateStackView() {
-    stackView.addArrangedSubview(heading)
-    stackView.addArrangedSubview(summary)
-    stackView.addArrangedSubview(author)
-    stackView.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
-    stackView.isLayoutMarginsRelativeArrangement = true
-    stackView.axis = .vertical
-    stackView.distribution = .equalSpacing
-    stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    verticalStack.addArrangedSubview(horizontalStack)
+    verticalStack.addArrangedSubview(summary)
+    verticalStack.addArrangedSubview(author)
+    verticalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+    verticalStack.isLayoutMarginsRelativeArrangement = true
+    verticalStack.axis = .vertical
+    verticalStack.distribution = .equalSpacing
+    verticalStack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
   }
   
   func decorateTitle() {
@@ -93,16 +93,16 @@ class HeadlineItem: UICollectionViewCell {
   }
   
   func decorateHeading() {
-    heading.addArrangedSubview(thumbnail)
-    heading.addArrangedSubview(title)
-    heading.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
-    heading.isLayoutMarginsRelativeArrangement = true
-    heading.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    heading.axis = .horizontal
-    heading.distribution = .fillProportionally
-    heading.alignment = .leading
-    heading.spacing = 10
-    heading.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    horizontalStack.addArrangedSubview(thumbnail)
+    horizontalStack.addArrangedSubview(title)
+    horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
+    horizontalStack.isLayoutMarginsRelativeArrangement = true
+    horizontalStack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    horizontalStack.axis = .horizontal
+    horizontalStack.distribution = .fillProportionally
+    horizontalStack.alignment = .leading
+    horizontalStack.spacing = 10
+    horizontalStack.heightAnchor.constraint(equalToConstant: 50).isActive = true
   }
 
   func decorateSummary() {
