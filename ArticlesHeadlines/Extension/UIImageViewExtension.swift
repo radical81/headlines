@@ -31,17 +31,3 @@ extension UIImageView {
     UIImage(systemName: "photo")
   }  
 }
-
-//TODO: Move
-enum ImageError: Error {
-  /// Image fetch failed.
-  case fetchFailed(String)
-  
-  /// Retrieve the error messages
-  var message: String {
-    switch self {
-    case .fetchFailed(let message):
-      return message
-    }
-  }
-}
