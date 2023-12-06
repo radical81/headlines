@@ -101,6 +101,10 @@
 		86877EE42B200A0F008A190A /* ArticlesHeadlines */ = {
 			isa = PBXGroup;
 			children = (
+				86E99B762B200F9300F7BF26 /* Controller */,
+				86E99B752B200F7F00F7BF26 /* Model */,
+				86E99B732B200E0D00F7BF26 /* View */,
+				86E99B742B200E1300F7BF26 /* ViewModel */,
 				86877EE52B200A0F008A190A /* AppDelegate.swift */,
 				86877EE72B200A0F008A190A /* SceneDelegate.swift */,
 				86877EE92B200A0F008A190A /* ViewController.swift */,
@@ -128,6 +132,34 @@
 				86877F0B2B200A12008A190A /* ArticlesHeadlinesUITestsLaunchTests.swift */,
 			);
 			path = ArticlesHeadlinesUITests;
+			sourceTree = "<group>";
+		};
+		86E99B732B200E0D00F7BF26 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		86E99B742B200E1300F7BF26 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		86E99B752B200F7F00F7BF26 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86E99B762B200F9300F7BF26 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
