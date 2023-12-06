@@ -11,6 +11,6 @@ class HeadlinesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.addSubview(HeadlinesList(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)))
+    view.addSubview(HeadlineItem(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)))
   }
 }
