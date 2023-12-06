@@ -10,11 +10,8 @@ import UIKit
 
 /// Convenience methods and properties for building images in the view.
 extension UIImageView {
-  /// Load image view from URL using asynchronous await.
-  func loadFromUrl(_ urlString: String) async throws {
-    guard let url = URL(string: urlString) else {
-      return
-    }
+  /// Load image view from URL  using async await.
+  func loadFromUrl(_ url: URL) async throws {
     let request = URLRequest(url: url)
     do {
       let (data, _) = try await URLSession.shared.data(for: request)

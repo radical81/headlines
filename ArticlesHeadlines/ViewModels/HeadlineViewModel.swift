@@ -30,16 +30,10 @@ struct HeadlineViewModel {
     headline.author
   }
   
-  /// Returns an image view that loads an image from a URL.
-  var thumbnail: UIImageView? {
-    get async throws{
-      let image = await UIImageView()
-      do {
-        try await image.loadFromUrl(headline.urlToImage)
-      } catch {
-        throw ImageError.fetchFailed("Couldn't fetch image.")
-      }
-      return image
+  var imageUrl: URL? {
+    guard let url = URL(string: headline.urlToImage) else {
+      return nil
     }
+    return url
   }
 }

@@ -14,11 +14,17 @@ class HeadlineItem: UICollectionViewCell {
   // MARK: - Data source
   var headline: HeadlineViewModel? {
     didSet {
+      guard let headline = headline else {
+        return
+      }
+      title.text = headline.title
+      summary.text = headline.description
+      author.text = headline.author
+      guard let url = headline.imageUrl else {
+        return
+      }
       Task {
-        title.text = headline?.title ?? "No title"
-        summary.text = headline?.description ?? ""
-        author.text = headline?.author ?? ""
-        thumbnail = UIImageView(image: UIImage(systemName: "mail"))
+        try await thumbnail.loadFromUrl(url)
       }
     }
   }
@@ -28,7 +34,7 @@ class HeadlineItem: UICollectionViewCell {
   var summary = UILabel()
   var author = UILabel()
   var stackView = UIStackView()
-  var thumbnail = UIImageView(image: UIImage(systemName: "mail"))
+  var thumbnail = UIImageView(image: UIImage(systemName: "photo"))
   var heading = UIStackView()
   
   // MARK: - Methods
@@ -76,7 +82,7 @@ class HeadlineItem: UICollectionViewCell {
   
   func decorateThumbnail() {
     thumbnail.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-    thumbnail.contentMode = .scaleAspectFill
+    thumbnail.contentMode = .scaleToFill
     thumbnail.widthAnchor.constraint(equalToConstant: 50).isActive = true
   }
   
