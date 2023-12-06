@@ -12,8 +12,10 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let first = createTabItem(with: "Test", and: UIImage(systemName: "mail"), vc: MainViewController())
-        setViewControllers([first], animated: true)
+        let headlines = createTabItem(with: "Headlines", and: UIImage(systemName: "newspaper"), vc: HeadlinesViewController())
+        let sources = createTabItem(with: "Sources", and: UIImage(systemName: "cloud"), vc: SourcesViewController())
+        let saved = createTabItem(with: "Saved", and: UIImage(systemName: "square.and.arrow.down"), vc: SavedViewController())
+        setViewControllers([headlines, sources, saved], animated: true)
     }
     
 
