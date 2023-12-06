@@ -40,11 +40,11 @@ class HeadlineItem: UICollectionViewCell {
   func initSubviews() {
     decorateThumbnail()
     decorateTitle()
-    decorateHorizontalStack()
     decorateSummary()
     decorateAuthor()
     decorateVerticalStack()
-    addSubview(verticalStack)
+    decorateHorizontalStack()
+    addSubview(horizontalStack)
   }
   
   /// Updates UI with data from view model.
@@ -71,14 +71,14 @@ class HeadlineItem: UICollectionViewCell {
   }
   
   func decorateVerticalStack() {
-    verticalStack.addArrangedSubview(horizontalStack)
+    verticalStack.addArrangedSubview(title)
     verticalStack.addArrangedSubview(summary)
     verticalStack.addArrangedSubview(author)
     verticalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
     verticalStack.isLayoutMarginsRelativeArrangement = true
     verticalStack.axis = .vertical
     verticalStack.distribution = .equalSpacing
-    verticalStack.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    verticalStack.spacing = 20
   }
   
   func decorateTitle() {
@@ -87,28 +87,28 @@ class HeadlineItem: UICollectionViewCell {
   }
   
   func decorateThumbnail() {
-    thumbnail.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+    thumbnail.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     thumbnail.contentMode = .scaleToFill
-    thumbnail.widthAnchor.constraint(equalToConstant: 50).isActive = true
+    thumbnail.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    thumbnail.heightAnchor.constraint(equalToConstant: 100).isActive = true
   }
   
   func decorateHorizontalStack() {
     horizontalStack.addArrangedSubview(thumbnail)
-    horizontalStack.addArrangedSubview(title)
-    horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
+    horizontalStack.addArrangedSubview(verticalStack)
+    horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
     horizontalStack.isLayoutMarginsRelativeArrangement = true
-    horizontalStack.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    horizontalStack.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 10)
     horizontalStack.axis = .horizontal
     horizontalStack.distribution = .fillProportionally
-    horizontalStack.alignment = .leading
-    horizontalStack.spacing = 10
-    horizontalStack.heightAnchor.constraint(equalToConstant: 50).isActive = true
+    horizontalStack.alignment = .center
+    horizontalStack.spacing = 20
   }
 
   func decorateSummary() {
     summary.textAlignment = .justified
-    summary.lineBreakMode = .byWordWrapping
-    summary.numberOfLines = 0
+    summary.lineBreakMode = .byTruncatingTail
+    summary.numberOfLines = 2
   }
   
   func decorateAuthor() {
