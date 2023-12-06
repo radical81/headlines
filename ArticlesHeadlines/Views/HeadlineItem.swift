@@ -11,14 +11,27 @@ import UIKit
 /// Represents a single item in the list of headlines.
 class HeadlineItem: UICollectionViewCell {
   
+  // MARK: - Data source
   var headline: HeadlineViewModel? {
     didSet {
-      title.text = headline?.title ?? "No title"
+      Task {
+        title.text = headline?.title ?? "No title"
+        summary.text = headline?.description ?? ""
+        author.text = headline?.author ?? ""
+        thumbnail = UIImageView(image: UIImage(systemName: "mail"))
+      }
     }
   }
   
+  // MARK: - Display elements
   var title = UILabel()
+  var summary = UILabel()
+  var author = UILabel()
+  var stackView = UIStackView()
+  var thumbnail = UIImageView(image: UIImage(systemName: "mail"))
+  var heading = UIStackView()
   
+  // MARK: - Methods
   override init(frame: CGRect) {
     super.init(frame: frame)
     decorateCell()
@@ -30,8 +43,13 @@ class HeadlineItem: UICollectionViewCell {
   }
   
   func initSubviews() {
+    decorateThumbnail()
     decorateTitle()
-    addSubview(title)
+    decorateHeading()
+    decorateSummary()
+    decorateAuthor()
+    decorateStackView()
+    addSubview(stackView)
   }
   
   func decorateCell() {
@@ -40,9 +58,48 @@ class HeadlineItem: UICollectionViewCell {
     self.layer.cornerRadius = 5
   }
   
+  func decorateStackView() {
+    stackView.addArrangedSubview(heading)
+    stackView.addArrangedSubview(summary)
+    stackView.addArrangedSubview(author)
+    stackView.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+    stackView.isLayoutMarginsRelativeArrangement = true
+    stackView.axis = .vertical
+    stackView.distribution = .equalSpacing
+    stackView.layoutMargins = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+  }
+  
   func decorateTitle() {
-    title.frame = CGRect(x: 0, y: 20, width: self.bounds.width, height: 20)
-    title.textAlignment = .center
-    title.text = headline?.title ?? "No title"
+    title.font = UIFont.boldSystemFont(ofSize: 16)
+    title.textAlignment = .left
+  }
+  
+  func decorateThumbnail() {
+    thumbnail.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+    thumbnail.contentMode = .scaleAspectFill
+    thumbnail.widthAnchor.constraint(equalToConstant: 50).isActive = true
+  }
+  
+  func decorateHeading() {
+    heading.addArrangedSubview(thumbnail)
+    heading.addArrangedSubview(title)
+    heading.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 50)
+    heading.isLayoutMarginsRelativeArrangement = true
+    heading.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    heading.axis = .horizontal
+    heading.distribution = .fillProportionally
+    heading.alignment = .leading
+    heading.spacing = 10
+    heading.heightAnchor.constraint(equalToConstant: 50).isActive = true
+  }
+
+  func decorateSummary() {
+    summary.textAlignment = .justified
+    summary.lineBreakMode = .byWordWrapping
+    summary.numberOfLines = 0
+  }
+  
+  func decorateAuthor() {
+    author.textAlignment = .left
   }
 }

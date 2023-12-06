@@ -30,7 +30,7 @@ class HeadlinesViewController: UIViewController {
   func fetchHeadlines() {
     //TODO: Real data
     headlines = [
-      HeadlineViewModel(Headline(title: "test", description: "testing", author: "rex", urlToImage: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_766206_17017494326985532.jpg")),
+      HeadlineViewModel(Headline(title: "test", description: "testing lots of lots of text the quick brown fox jumps over the lazy dog near the river bank", author: "rex", urlToImage: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_766206_17017494326985532.jpg")),
       HeadlineViewModel(Headline(title: "test 2", description: "testing again", author: "rex", urlToImage: "")),
       HeadlineViewModel(Headline(title: "test", description: "testing", author: "rex", urlToImage: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_766206_17017494326985532.jpg")),
       HeadlineViewModel(Headline(title: "test 2", description: "testing again", author: "rex", urlToImage: "")),
