@@ -8,7 +8,7 @@
 import Foundation
 
 /// enum to track errors from loading images.
-enum ImageError: Error {
+enum ImageError: ErrorWithMessage {
   /// Image fetch failed.
   case fetchFailed(String)
   
