@@ -32,6 +32,7 @@
 		86EF96632B2143970062C877 /* HeadlineItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96622B2143970062C877 /* HeadlineItemTableViewCell.swift */; };
 		86EF96652B2144030062C877 /* HeadlineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96642B2144030062C877 /* HeadlineItemCollectionViewCell.swift */; };
 		86EF96672B2148F90062C877 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96662B2148F90062C877 /* SavedViewController.swift */; };
+		86EF966B2B215AFA0062C877 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF966A2B215AFA0062C877 /* ArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		86EF96622B2143970062C877 /* HeadlineItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineItemTableViewCell.swift; sourceTree = "<group>"; };
 		86EF96642B2144030062C877 /* HeadlineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		86EF96662B2148F90062C877 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
+		86EF966A2B215AFA0062C877 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 		86E99B762B200F9300F7BF26 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				86EF966A2B215AFA0062C877 /* ArticleViewController.swift */,
 				863B734E2B202DBB00639F25 /* HeadlinesViewController.swift */,
 				863B73692B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift */,
 				86EF96662B2148F90062C877 /* SavedViewController.swift */,
@@ -366,6 +369,7 @@
 				863B734F2B202DBB00639F25 /* HeadlinesViewController.swift in Sources */,
 				86877EF02B200A0F008A190A /* ArticlesHeadlines.xcdatamodeld in Sources */,
 				863B735F2B20758300639F25 /* HeadlineItem.swift in Sources */,
+				86EF966B2B215AFA0062C877 /* ArticleViewController.swift in Sources */,
 				86EF965F2B2136440062C877 /* SourceItem.swift in Sources */,
 				86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */,
 				863B736A2B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift in Sources */,
