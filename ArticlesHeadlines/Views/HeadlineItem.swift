@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 /// Represents a single item in the list of headlines.
-class HeadlineItem: UICollectionViewCell {
+class HeadlineItem: UIView {
   
   // MARK: - Data source
   var headline: HeadlineViewModel? {

@@ -19,7 +19,7 @@ class HeadlinesViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     headlinesList = HeadlinesList(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
-    headlinesList?.register(HeadlineItem.self, forCellWithReuseIdentifier: "HeadlineList")
+    headlinesList?.register(HeadlineItemCollectionViewCell.self, forCellWithReuseIdentifier: "HeadlineList")
     headlinesList?.dataSource = self
     headlinesList?.delegate = self
     view.addSubview(headlinesList ?? UICollectionView())
