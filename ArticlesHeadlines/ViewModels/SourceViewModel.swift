@@ -11,13 +11,10 @@ import Foundation
 struct SourceViewModel {
   /// The data source
   var source: Source
-  /// Turns the news source on or off. If it's off, there will be no news retrieved from it.
-  var selected: Bool
   
-  init(_ source: Source, selected: Bool) {
+  init(_ source: Source) {
     self.source = source
-    self.selected = selected
-  }  
+  }
   
   // MARK: - Computed Properties
   

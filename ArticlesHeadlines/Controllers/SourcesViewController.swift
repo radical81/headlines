@@ -41,6 +41,15 @@ class SourcesViewController: UITableViewController {
   /// Fetch data
   func fetchData() {
     //TODO: Real data
-    sources = [SourceViewModel(Source(name: "abc", description: "local AU news"), selected: true), SourceViewModel(Source(name: "sky news"), selected: true)]
+    sources = [
+      SourceViewModel(Source(name: "abc", description: "local AU news", selected: true)),
+      SourceViewModel(Source(name: "sky news", selected: true))
+    ]
+    let sourcesFromStore = LocalStore().newsSources
+    for i in sources.indices {
+      if let match = sourcesFromStore.findMatch(sources[i].source) {
+        sources[i].source.selected = match.selected
+      }
+    }    
   }
 }

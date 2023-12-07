@@ -32,6 +32,7 @@
 		86EF96652B2144030062C877 /* HeadlineItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96642B2144030062C877 /* HeadlineItemCollectionViewCell.swift */; };
 		86EF96672B2148F90062C877 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96662B2148F90062C877 /* SavedViewController.swift */; };
 		86EF966B2B215AFA0062C877 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF966A2B215AFA0062C877 /* ArticleViewController.swift */; };
+		86EF966E2B2189B50062C877 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF966D2B2189B50062C877 /* LocalStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		86EF96642B2144030062C877 /* HeadlineItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadlineItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		86EF96662B2148F90062C877 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		86EF966A2B215AFA0062C877 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		86EF966D2B2189B50062C877 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +237,7 @@
 		86EF966C2B21897C0062C877 /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				86EF966D2B2189B50062C877 /* LocalStore.swift */,
 			);
 			path = Store;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				86EF966B2B215AFA0062C877 /* ArticleViewController.swift in Sources */,
 				86EF965F2B2136440062C877 /* SourceItem.swift in Sources */,
 				86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */,
+				86EF966E2B2189B50062C877 /* LocalStore.swift in Sources */,
 				863B736A2B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift in Sources */,
 				86EF96672B2148F90062C877 /* SavedViewController.swift in Sources */,
 				863B73552B20456500639F25 /* Headline.swift in Sources */,
