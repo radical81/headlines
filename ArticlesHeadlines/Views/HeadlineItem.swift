@@ -28,7 +28,7 @@ class HeadlineItem: UIView {
   
   // MARK: - Methods
   override init(frame: CGRect) {
-    super.init(frame: frame)    
+    super.init(frame: frame)
     initSubviews()
   }
   
@@ -90,7 +90,7 @@ class HeadlineItem: UIView {
   func decorateHorizontalStack() {
     horizontalStack.addArrangedSubview(thumbnail)
     horizontalStack.addArrangedSubview(verticalStack)
-    horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
+    horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 150)
     horizontalStack.isLayoutMarginsRelativeArrangement = true
     horizontalStack.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 10)
     horizontalStack.axis = .horizontal

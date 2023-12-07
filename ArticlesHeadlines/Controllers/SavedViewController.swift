@@ -15,7 +15,6 @@ class SavedViewController: UITableViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(HeadlineItemTableViewCell.self, forCellReuseIdentifier: "SavedHeadlinesList")
-    tableView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     tableView.allowsSelection = false
     fetchData()
   }
@@ -30,15 +29,26 @@ class SavedViewController: UITableViewController {
     return headlines.count
   }
   
-  
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedHeadlinesList", for: indexPath) as? HeadlineItemTableViewCell else {
       return UITableViewCell()
     }
-    cell.headline = headlines[indexPath.row]    
+    cell.headline = headlines[indexPath.row]
     return cell
   }
-  
+     
+  override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    150
+  }
+
+  override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    150
+  }
+
+  override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    cell.layoutIfNeeded()
+  }
+
 
     /*
     // Override to support conditional editing of the table view.
