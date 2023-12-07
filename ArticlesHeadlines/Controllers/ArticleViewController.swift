@@ -6,12 +6,13 @@
 //
 
 import UIKit
+import WebKit
 
-class ArticleViewController: UIViewController {
+class ArticleViewController: UIViewController, WKUIDelegate {
 
   /// The data source
   var headline: HeadlineViewModel
-  
+    
   init(_ headline: HeadlineViewModel) {
     self.headline = headline
     super.init(nibName: nil, bundle: nil)
@@ -24,9 +25,25 @@ class ArticleViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.rightBarButtonItems = [UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveItem))]
-    view.addSubview(Article(frame: view.bounds))
   }
   
+  override func loadView() {
+    loadWebView(from: headline)
+  }
+  
+  func loadWebView(from headline: HeadlineViewModel) {
+    let webConfiguration = WKWebViewConfiguration()
+    let webView = WKWebView(frame: .zero, configuration: webConfiguration)
+    webView.uiDelegate = self
+    view = webView
+    guard let articleUrl = URL(string: headline.articleUrl) else {
+      return
+    }
+    let request = URLRequest(url: articleUrl)
+    DispatchQueue.main.async {
+      webView.load(request)
+    }
+  }
   
   @objc func saveItem() {
     
