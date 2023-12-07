@@ -61,7 +61,7 @@ class SavedViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       // Delete the row from the data source
-      let confirmation = generateConfirmation {
+      let confirmation = UIAlertController.confirmDelete {        
         self.delete(at: indexPath)
       }
       self.present(confirmation, animated: true)
@@ -89,25 +89,5 @@ class SavedViewController: UITableViewController {
     LocalStore().deleteHeadline(headlines[indexPath.row].headline)
     headlines.remove(at: indexPath.row)
     tableView.deleteRows(at: [indexPath], with: .fade)
-  }
-  
-  /// Generate confirmation dialog
-  func generateConfirmation(action: @escaping () -> Void) -> UIAlertController {
-    // Declare Alert message
-    let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
-    
-    // Create OK button with action handler
-    let ok = UIAlertAction(title: "OK", style: .default, handler: { _ in
-      action()
-    })
-    
-    // Create Cancel button with action handlder
-    let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
-    
-    //Add OK and Cancel button to dialog message
-    dialogMessage.addAction(ok)
-    dialogMessage.addAction(cancel)
-    
-    return dialogMessage
   }
 }

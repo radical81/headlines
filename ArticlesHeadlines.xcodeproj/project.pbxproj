@@ -33,6 +33,7 @@
 		86EF96672B2148F90062C877 /* SavedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96662B2148F90062C877 /* SavedViewController.swift */; };
 		86EF966B2B215AFA0062C877 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF966A2B215AFA0062C877 /* ArticleViewController.swift */; };
 		86EF966E2B2189B50062C877 /* LocalStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF966D2B2189B50062C877 /* LocalStore.swift */; };
+		86EF96702B21F3030062C877 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF966F2B21F3030062C877 /* UIAlertControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		86EF96662B2148F90062C877 /* SavedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedViewController.swift; sourceTree = "<group>"; };
 		86EF966A2B215AFA0062C877 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		86EF966D2B2189B50062C877 /* LocalStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStore.swift; sourceTree = "<group>"; };
+		86EF966F2B21F3030062C877 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				863B73592B2047B600639F25 /* UIImageViewExtension.swift */,
+				86EF966F2B21F3030062C877 /* UIAlertControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				863B735D2B2074C400639F25 /* ImageError.swift in Sources */,
 				86EF96632B2143970062C877 /* HeadlineItemTableViewCell.swift in Sources */,
 				86877EE82B200A0F008A190A /* SceneDelegate.swift in Sources */,
+				86EF96702B21F3030062C877 /* UIAlertControllerExtension.swift in Sources */,
 				86EF96652B2144030062C877 /* HeadlineItemCollectionViewCell.swift in Sources */,
 				863B73512B202DCD00639F25 /* SourcesViewController.swift in Sources */,
 				86EF96612B2137420062C877 /* SourceViewModel.swift in Sources */,
