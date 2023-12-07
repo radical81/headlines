@@ -21,7 +21,7 @@ class HeadlineItemTableViewCell: UITableViewCell {
   //MARK: - Methods
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    headlineItem = HeadlineItem(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height))
+    headlineItem = HeadlineItem(frame: CGRect(x: 10, y: 10, width: self.bounds.width, height: self.bounds.height))
     decorateHeadlineItem()
     decorateCell()
     addSubview(headlineItem)
@@ -32,7 +32,7 @@ class HeadlineItemTableViewCell: UITableViewCell {
   }
   
   func decorateCell() {
-    self.layoutMargins = UIEdgeInsets(top: 150, left: 50, bottom: 10, right: 10)
+    
     
   }
   
