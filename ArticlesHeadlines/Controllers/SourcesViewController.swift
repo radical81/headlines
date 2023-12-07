@@ -40,12 +40,15 @@ class SourcesViewController: UITableViewController {
   
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     var newValue = sources[indexPath.row].source
-    newValue.selected = true
+    if newValue.selected == true {
+      newValue.selected = false
+    } else {
+      newValue.selected = true
+    }
     sources[indexPath.row].source = newValue
     LocalStore().saveNewsSource(newValue)
     if let cell = tableView.cellForRow(at: indexPath) as? SourceItem {
       cell.source = sources[indexPath.row]
-      cell.isSelected = true
       cell.updateWithData()
     }
   }
@@ -57,7 +60,6 @@ class SourcesViewController: UITableViewController {
     LocalStore().saveNewsSource(newValue)
     if let cell = tableView.cellForRow(at: indexPath) as? SourceItem {
       cell.source = sources[indexPath.row]
-      cell.isSelected = false
       cell.updateWithData()
     }
   }
@@ -72,7 +74,7 @@ class SourcesViewController: UITableViewController {
     let sourcesFromStore = LocalStore().newsSources
     for i in freshLoad.indices {
       if let match = sourcesFromStore.findMatch(freshLoad[i].source) {
-        freshLoad[i].source.selected = match.selected
+        freshLoad[i].source = match
       }
     }
     sources = freshLoad
