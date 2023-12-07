@@ -17,8 +17,7 @@ struct SourceViewModel {
   init(_ source: Source, selected: Bool) {
     self.source = source
     self.selected = selected
-  }
-  
+  }  
   
   // MARK: - Computed Properties
   
@@ -26,6 +25,4 @@ struct SourceViewModel {
   var name: String {
     source.name
   }
-  
-
 }
