@@ -12,5 +12,6 @@ struct Headline {
   var title: String
   var description: String
   var author: String
+  var url: String
   var urlToImage: String
 }

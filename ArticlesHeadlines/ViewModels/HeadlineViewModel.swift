@@ -30,6 +30,10 @@ struct HeadlineViewModel {
     headline.author
   }
   
+  var articleUrl: String {
+    headline.url
+  }
+  
   var imageUrl: URL? {
     guard let url = URL(string: headline.urlToImage) else {
       return nil
