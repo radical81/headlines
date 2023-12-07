@@ -22,7 +22,14 @@ class HeadlineItemCollectionViewCell: UICollectionViewCell {
   override init(frame: CGRect) {
     super.init(frame: frame)
     headlineItem = HeadlineItem(frame: self.bounds)
+    decorateCell()
     addSubview(headlineItem)
+  }
+  
+  func decorateCell() {
+    headlineItem.layer.borderColor = UIColor.lightGray.cgColor
+    headlineItem.layer.borderWidth = 1
+    headlineItem.layer.cornerRadius = 5
   }
   
   required init?(coder: NSCoder) {

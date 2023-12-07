@@ -28,8 +28,7 @@ class HeadlineItem: UIView {
   
   // MARK: - Methods
   override init(frame: CGRect) {
-    super.init(frame: frame)
-    decorateCell()
+    super.init(frame: frame)    
     initSubviews()
   }
   
@@ -64,11 +63,6 @@ class HeadlineItem: UIView {
   }
   
   // MARK: - Decorate UI layout
-  func decorateCell() {
-    self.layer.borderColor = UIColor.lightGray.cgColor
-    self.layer.borderWidth = 1
-    self.layer.cornerRadius = 5
-  }
   
   func decorateVerticalStack() {
     verticalStack.addArrangedSubview(title)
