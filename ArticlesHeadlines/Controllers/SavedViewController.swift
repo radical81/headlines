@@ -14,7 +14,7 @@ class SavedViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.register(HeadlineItemTableViewCell.self, forCellReuseIdentifier: "SavedHeadlinesList")    
+    tableView.register(HeadlineItemTableViewCell.self, forCellReuseIdentifier: "SavedHeadlinesList")
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -61,9 +61,10 @@ class SavedViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       // Delete the row from the data source
-      delete(headlines[indexPath.row])
-      headlines.remove(at: indexPath.row)
-      tableView.deleteRows(at: [indexPath], with: .fade)
+      let confirmation = generateConfirmation {
+        self.delete(at: indexPath)
+      }
+      self.present(confirmation, animated: true)
     }
   }
 
@@ -84,7 +85,29 @@ class SavedViewController: UITableViewController {
   }
   
   /// Delete row and remove from store.
-  func delete(_ headline: HeadlineViewModel) {
-    LocalStore().deleteHeadline(headline.headline)
+  func delete(at indexPath: IndexPath) {
+    LocalStore().deleteHeadline(headlines[indexPath.row].headline)
+    headlines.remove(at: indexPath.row)
+    tableView.deleteRows(at: [indexPath], with: .fade)
+  }
+  
+  /// Generate confirmation dialog
+  func generateConfirmation(action: @escaping () -> Void) -> UIAlertController {
+    // Declare Alert message
+    let dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete this?", preferredStyle: .alert)
+    
+    // Create OK button with action handler
+    let ok = UIAlertAction(title: "OK", style: .default, handler: { _ in
+      action()
+    })
+    
+    // Create Cancel button with action handlder
+    let cancel = UIAlertAction(title: "Cancel", style: .cancel) { _ in }
+    
+    //Add OK and Cancel button to dialog message
+    dialogMessage.addAction(ok)
+    dialogMessage.addAction(cancel)
+    
+    return dialogMessage
   }
 }
