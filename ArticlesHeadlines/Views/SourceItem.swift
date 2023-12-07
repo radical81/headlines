@@ -17,6 +17,9 @@ class SourceItem: UITableViewCell {
     }
   }
 
+  // MARK: - Local Store
+  let store = LocalStore()
+
   // MARK: - Display elements
   var hStack = UIStackView()
   var name = UILabel()
@@ -32,14 +35,12 @@ class SourceItem: UITableViewCell {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
-  
-  override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    tick.isHidden = !selected
-  }
-  
+    
   func updateWithData() {
-    name.text = source?.name
+    if let source = source {
+      name.text = source.name
+      tick.isHidden =  !source.isSelected
+    }
   }
   
   func initSubviews() {
@@ -66,11 +67,10 @@ class SourceItem: UITableViewCell {
 
   func decorateSelected() {
     tick.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
-    tick.isHidden = true
   }
   
   func decorateName() {
     name.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
-    name.font = UIFont.boldSystemFont(ofSize: 16)    
+    name.font = UIFont.boldSystemFont(ofSize: 16)
   }
 }

@@ -22,4 +22,8 @@ struct SourceViewModel {
   var name: String {
     source.name
   }
+  /// True if the source is selected.
+  var isSelected: Bool {
+    source.selected
+  }
 }

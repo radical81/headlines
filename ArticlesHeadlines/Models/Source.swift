@@ -8,7 +8,7 @@
 import Foundation
 
 /// Tracks the source of the news for filtered content.
-struct Source {
+struct Source: Codable {
   /// Name of the news source.
   var name: String
   /// Description
