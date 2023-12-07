@@ -14,8 +14,7 @@ class SavedViewController: UITableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    tableView.register(HeadlineItemTableViewCell.self, forCellReuseIdentifier: "SavedHeadlinesList")
-    tableView.allowsSelection = false
+    tableView.register(HeadlineItemTableViewCell.self, forCellReuseIdentifier: "SavedHeadlinesList")    
   }
   
   override func viewWillAppear(_ animated: Bool) {
@@ -68,6 +67,10 @@ class SavedViewController: UITableViewController {
     }
   }
 
+  /// Row selection
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    self.navigationController?.pushViewController(ArticleViewController(headlines[indexPath.row]), animated: true)
+  }
   
   /// Fetch data/
   func fetchData() {
