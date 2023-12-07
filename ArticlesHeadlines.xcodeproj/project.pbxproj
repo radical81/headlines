@@ -159,11 +159,12 @@
 		86877EE42B200A0F008A190A /* ArticlesHeadlines */ = {
 			isa = PBXGroup;
 			children = (
-				863B73662B20781200639F25 /* Supporting Files */,
 				863B735B2B2074A400639F25 /* Enums */,
 				86E99B762B200F9300F7BF26 /* Controllers */,
 				863B73582B20473D00639F25 /* Extensions */,
 				86E99B752B200F7F00F7BF26 /* Models */,
+				86EF966C2B21897C0062C877 /* Store */,
+				863B73662B20781200639F25 /* Supporting Files */,
 				86E99B732B200E0D00F7BF26 /* Views */,
 				86E99B742B200E1300F7BF26 /* ViewModels */,
 				86877EEE2B200A0F008A190A /* ArticlesHeadlines.xcdatamodeld */,
@@ -229,6 +230,13 @@
 				86810B5E2B201FF4001888FD /* TabBarViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		86EF966C2B21897C0062C877 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
