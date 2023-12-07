@@ -23,6 +23,8 @@ extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewD
   }
   
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    self.navigationController?.pushViewController(ArticleViewController(headlines[indexPath.row]), animated: true)
+    let article = ArticleViewController(headlines[indexPath.row])
+    article.showSaveButton = true
+    self.navigationController?.pushViewController(article, animated: true)
   }
 }

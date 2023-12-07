@@ -61,7 +61,7 @@ class SavedViewController: UITableViewController {
   override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
     if editingStyle == .delete {
       // Delete the row from the data source
-      let confirmation = UIAlertController.confirmDelete {        
+      let confirmation = UIAlertController.confirmDelete {
         self.delete(at: indexPath)
       }
       self.present(confirmation, animated: true)
@@ -70,7 +70,9 @@ class SavedViewController: UITableViewController {
 
   /// Row selection
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    self.navigationController?.pushViewController(ArticleViewController(headlines[indexPath.row]), animated: true)
+    let article = ArticleViewController(headlines[indexPath.row])
+    article.showDeleteButton = true
+    self.navigationController?.pushViewController(article, animated: true)
   }
   
   /// Fetch data/
