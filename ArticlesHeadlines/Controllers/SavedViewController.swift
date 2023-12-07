@@ -16,6 +16,9 @@ class SavedViewController: UITableViewController {
     super.viewDidLoad()
     tableView.register(HeadlineItemTableViewCell.self, forCellReuseIdentifier: "SavedHeadlinesList")
     tableView.allowsSelection = false
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
     fetchData()
   }
   
@@ -79,10 +82,9 @@ class SavedViewController: UITableViewController {
   /// Fetch data/
   func fetchData() {
     //TODO: Real data
-    headlines = [
-      HeadlineViewModel(Headline(title: "test", description: "testing lots of lots of text the quick brown fox jumps over the lazy dog near the river bank", author: "rex", url: "https://www.news-medical.net/news/20231204/Brown-seaweed-emerges-as-a-potent-ally-in-diabetes-control.aspx", urlToImage: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_766206_17017494326985532.jpg")),
-      HeadlineViewModel(Headline(title: "test 2", description: "testing again", author: "rex", url: "", urlToImage: "")),
-      HeadlineViewModel(Headline(title: "test", description: "testing", author: "rex", url: "", urlToImage: "https://d2jx2rerrg6sh3.cloudfront.net/images/news/ImageForNews_766206_17017494326985532.jpg"))    
-    ]
+    let savedHeadlines = LocalStore().savedHeadlines
+    savedHeadlines.forEach { headline in
+      headlines.append(HeadlineViewModel(headline))
+    }
   }
 }

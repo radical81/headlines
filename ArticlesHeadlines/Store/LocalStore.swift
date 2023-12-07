@@ -18,6 +18,49 @@ struct LocalStore {
   // JSON Decoder
   let decoder = JSONDecoder()
   
+  // MARK: - Saved Headlines
+  /// Retrieve saved headlines
+  var savedHeadlines: [Headline] {
+    if let data = store.data(forKey: savedHeadlinesKey) {
+      do {
+        let headlines = try decoder.decode([Headline].self, from: data)
+        return headlines
+      } catch {
+        print("Error decoding saved headlines. (\(error))")
+      }
+    }
+    return []
+  }
+  
+  /// Store headlines
+  func saveHeadline(_ headline: Headline) {
+    var currentHeadlines = savedHeadlines
+    currentHeadlines.removeAll {
+      $0 == headline
+    }
+    currentHeadlines.append(headline)
+    do {
+      let data = try encoder.encode(currentHeadlines)
+      store.set(data, forKey: savedHeadlinesKey)
+    } catch {
+      print("Error encoding headline. (\(error)")
+    }
+  }
+
+  /// Delete headline
+  func deleteHeadline(_ headline: Headline) {
+    var currentHeadlines = savedHeadlines
+    currentHeadlines.removeAll {
+      $0 == headline
+    }
+    do {
+      let data = try encoder.encode(currentHeadlines)
+      store.set(data, forKey: savedHeadlinesKey)
+    } catch {
+      print("Error encoding headline. (\(error)")
+    }
+  }
+
   // MARK: - News sources
   /// Retrieve news sources
   var newsSources: [Source] {

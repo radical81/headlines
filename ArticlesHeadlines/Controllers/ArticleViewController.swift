@@ -46,7 +46,7 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   }
   
   @objc func saveItem() {
-    
+    LocalStore().saveHeadline(headline.headline)
   }
   
   /*
