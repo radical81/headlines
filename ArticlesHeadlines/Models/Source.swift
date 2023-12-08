@@ -27,11 +27,11 @@ struct Source: Codable {
     name = try values.decode(String.self, forKey: .name)
     description = try values.decodeIfPresent(String.self, forKey: .description)
     url = try values.decode(String.self, forKey: .url)
-    selected = false
+    selected = try values.decodeIfPresent(Bool.self, forKey: .selected) ?? false
   }
 
   enum CodingKeys: String, CodingKey {
-    case id, name, description, url
+    case id, name, description, url, selected
   }
 }
 
