@@ -11,5 +11,5 @@ import Foundation
 struct Shared {
   /// Shared is an instance of the news retriever.
   /// It is of type NewsRetriever and the implementation instance is NewsAPI(). This can be changed later on to point to a different API.
-  static let shared: NewsRetriever = NewsApi()
+  static let news: NewsRetriever = NewsApi()
 }
