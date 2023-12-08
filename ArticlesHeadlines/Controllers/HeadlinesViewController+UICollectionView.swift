@@ -27,4 +27,15 @@ extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewD
     article.showSaveButton = true
     self.navigationController?.pushViewController(article, animated: true)
   }
+  
+  @objc func handleRefreshControl() {
+    // Refresh content
+    Task {
+      await fetchHeadlines()
+      // Dismiss the refresh control.
+      DispatchQueue.main.async {
+        self.headlinesList?.refreshControl?.endRefreshing()
+      }
+    }
+  }
 }
