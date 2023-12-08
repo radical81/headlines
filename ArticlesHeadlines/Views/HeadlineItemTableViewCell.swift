@@ -24,17 +24,11 @@ class HeadlineItemTableViewCell: UITableViewCell {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     headlineItem = HeadlineItem(frame: CGRect(x: 10, y: 10, width: self.bounds.width, height: self.bounds.height))
     decorateHeadlineItem()
-    decorateCell()
     addSubview(headlineItem)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
-  }
-  
-  func decorateCell() {
-    
-    
   }
   
   func decorateHeadlineItem() {
