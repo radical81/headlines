@@ -1,5 +1,5 @@
 //
-//  HeadlinesList.swift
+//  HeadlinesListCollectionView.swift
 //  ArticlesHeadlines
 //
 //  Created by Rex Jason Alobba on 6/12/2023.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// The collection view for the list of fresh headlines.
-class HeadlinesList: UICollectionView {
+class HeadlinesListCollectionView: UICollectionView {
 
   init(frame: CGRect) {
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()

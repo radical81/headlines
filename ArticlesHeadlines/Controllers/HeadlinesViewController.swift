@@ -13,7 +13,7 @@ class HeadlinesViewController: UIViewController {
 //  let api: NewsRetriever
 
   /// The list of headlines, a collection view.
-  var headlinesList: HeadlinesList?
+  var headlinesList: HeadlinesListCollectionView?
   
   /// The data source for the list.
   var dataForLoading: Loadable<[Headline]> = .notLoaded {
@@ -38,7 +38,7 @@ class HeadlinesViewController: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    headlinesList = HeadlinesList(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
+    headlinesList = HeadlinesListCollectionView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height))
     headlinesList?.register(HeadlineItemCollectionViewCell.self, forCellWithReuseIdentifier: "HeadlineList")
     headlinesList?.dataSource = self
     headlinesList?.delegate = self
