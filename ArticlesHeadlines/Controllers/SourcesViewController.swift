@@ -9,15 +9,35 @@ import UIKit
 
 class SourcesViewController: UITableViewController {
   
-  /// The data source for this list.
-  var sources: [SourceViewModel] = []
+  /// The data source for the list.
+  var dataForLoading: Loadable<[Source]> = .notLoaded {
+    didSet {
+      switch dataForLoading {
+      case .loaded(let data):
+        sources = data.map {
+          SourceViewModel($0)
+        }
+      default:
+        break
+      }
+    }
+  }
+
+  /// The view model instances for the list.
+  var sources: [SourceViewModel] = [] {
+    didSet {
+      tableView.reloadData()
+    }
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     tableView.register(SourceItem.self, forCellReuseIdentifier: "SourcesList")
     tableView.contentInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
     tableView.allowsMultipleSelection = true
-    fetchData()
+    Task {
+      await fetchData()
+    }
   }
 
   // MARK: - Table view data source
@@ -65,19 +85,14 @@ class SourcesViewController: UITableViewController {
   }
 
   /// Fetch data
-  func fetchData() {
-    //TODO: Real data
-    var freshLoad = [
-      SourceViewModel(Source(id: "abc-news-au", name: "abc", description: "local AU news", selected: true)),
-      SourceViewModel(Source(id: "sky-news", name: "sky news", selected: true))
-    ]
+  func fetchData() async {
+    dataForLoading = await ApiInstance.shared.fetchSources()
     let sourcesFromStore = LocalStore().newsSources
-    for i in freshLoad.indices {
-      if let match = sourcesFromStore.findMatch(freshLoad[i].source) {
-        freshLoad[i].source = match
+    for i in sources.indices {
+      if let match = sourcesFromStore.findMatch(sources[i].source) {
+        sources[i].source = match
       }
     }
-    sources = freshLoad
     print(sources)
   }
 }
