@@ -7,6 +7,7 @@
 
 import UIKit
 
+/// The collection view for the list of fresh headlines.
 class HeadlinesList: UICollectionView {
 
   init(frame: CGRect) {
