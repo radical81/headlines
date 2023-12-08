@@ -9,7 +9,9 @@ import Foundation
 
 /// Keeps track of a singleton that stores services.
 struct Shared {
-  /// Shared is an instance of the news retriever.
+  /// An Instance of the news retriever.
   /// It is of type NewsRetriever and the implementation instance is NewsAPI(). This can be changed later on to point to a different API.
   static let news: NewsRetriever = NewsApi()
+  
+  ///
 }
