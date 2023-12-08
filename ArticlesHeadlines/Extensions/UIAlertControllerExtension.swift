@@ -28,4 +28,14 @@ extension UIAlertController {
     
     return dialogMessage
   }
+  
+  /// Generate error alert.
+  static func errorAlert(title: String, message: String) -> UIAlertController {
+    // Declare Alert message
+    let dialogMessage = UIAlertController(title: title, message: message, preferredStyle: .alert)    
+    // Create OK button with action handler
+    let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+    dialogMessage.addAction(ok)
+    return dialogMessage
+  }
 }

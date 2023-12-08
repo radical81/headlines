@@ -45,11 +45,20 @@ class HeadlinesViewController: UIViewController {
     view.addSubview(headlinesList ?? UICollectionView())
     Task {
       await fetchHeadlines()
+      switch dataForLoading {
+      case .failed(let error):
+        if let error = error as? ErrorWithMessage {
+          self.present(UIAlertController.errorAlert(title: "Error", message: error.message), animated: true)
+        }
+      default:
+        break
+      }
     }
   }
   
   /// Fetch data/
   func fetchHeadlines() async {
+    dataForLoading = .loading
     dataForLoading = await ApiInstance.shared.fetchHeadlines([])
   }
 }
