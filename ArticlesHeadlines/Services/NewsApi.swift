@@ -60,7 +60,7 @@ struct NewsApi: NewsRetriever {
     else {
       return .failed(APIError.unknown)
     }
-    return .loaded(response.articles)
+    return .loaded(response.articles ?? [])
   }
   
   /// Retrieve news sources.
