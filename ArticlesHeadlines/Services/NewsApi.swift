@@ -26,7 +26,7 @@ struct NewsApi: NewsRetriever {
       return .failed(APIError.malformed("Invalid URL."))
     }
 
-    let sources = LocalStore().newsSources.map{ $0.id }.joined(separator: ",")
+    let sources = LocalStore().newsSources.filter{ $0.selected }.map{ $0.id }.joined(separator: ",")
     components.queryItems = [
         URLQueryItem(name: "apiKey", value: apiKey)
     ]
