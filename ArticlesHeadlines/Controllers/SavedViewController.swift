@@ -79,7 +79,7 @@ class SavedViewController: UITableViewController {
   func fetchData() {
     //TODO: Real data
     headlines = []
-    let savedHeadlines = LocalStore().savedHeadlines
+    let savedHeadlines = Shared.storage.savedHeadlines
     savedHeadlines.forEach { headline in
       headlines.append(HeadlineViewModel(headline))
     }
@@ -88,7 +88,7 @@ class SavedViewController: UITableViewController {
   
   /// Delete row and remove from store.
   func delete(at indexPath: IndexPath) {
-    LocalStore().deleteHeadline(headlines[indexPath.row].headline)
+    Shared.storage.deleteHeadline(headlines[indexPath.row].headline)
     headlines.remove(at: indexPath.row)
     tableView.deleteRows(at: [indexPath], with: .fade)
   }

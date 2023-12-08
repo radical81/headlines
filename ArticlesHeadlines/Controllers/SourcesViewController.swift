@@ -14,7 +14,7 @@ class SourcesViewController: UITableViewController {
     didSet {
       switch dataForLoading {
       case .loaded(let data): 
-        let sourcesFromStore = LocalStore().newsSources
+        let sourcesFromStore = Shared.storage.newsSources
         // Make sure that if the source in store is already selected, it will continue to be selected.
         var freshData = data
         for i in freshData.indices {
@@ -74,7 +74,7 @@ class SourcesViewController: UITableViewController {
       newValue.selected = true
     }
     sources[indexPath.row].source = newValue
-    LocalStore().saveNewsSource(newValue)
+    Shared.storage.saveNewsSource(newValue)
     if let cell = tableView.cellForRow(at: indexPath) as? SourceItem {
       cell.source = sources[indexPath.row]
       cell.updateWithData()
@@ -85,7 +85,7 @@ class SourcesViewController: UITableViewController {
     var newValue = sources[indexPath.row].source
     newValue.selected = false
     sources[indexPath.row].source = newValue
-    LocalStore().saveNewsSource(newValue)
+    Shared.storage.saveNewsSource(newValue)
     if let cell = tableView.cellForRow(at: indexPath) as? SourceItem {
       cell.source = sources[indexPath.row]
       cell.updateWithData()

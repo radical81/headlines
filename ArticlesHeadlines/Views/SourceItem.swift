@@ -17,9 +17,6 @@ class SourceItem: UITableViewCell {
     }
   }
 
-  // MARK: - Local Store
-  let store = LocalStore()
-
   // MARK: - Display elements
   var hStack = UIStackView()
   var name = UILabel()

@@ -60,12 +60,12 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   }
   
   @objc func saveItem() {
-    LocalStore().saveHeadline(headline.headline)
+    Shared.storage.saveHeadline(headline.headline)
   }
   
   @objc func deleteItem() {
     let confirmation = UIAlertController.confirmDelete {
-      LocalStore().deleteHeadline(self.headline.headline)
+      Shared.storage.deleteHeadline(self.headline.headline)
       self.navigationController?.popViewController(animated: true)
     }
     self.present(confirmation, animated: true)
