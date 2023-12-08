@@ -98,6 +98,7 @@
 		86EF967B2B2294220062C877 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		86EF967D2B22A6070062C877 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		86EF96802B22A9C20062C877 /* use-programmatic-uikit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "use-programmatic-uikit.md"; sourceTree = "<group>"; };
+		86EF96812B22AA910062C877 /* hide-api-implementation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "hide-api-implementation.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				86EF96802B22A9C20062C877 /* use-programmatic-uikit.md */,
+				86EF96812B22AA910062C877 /* hide-api-implementation.md */,
 			);
 			path = "Architecture Decisions";
 			sourceTree = "<group>";
