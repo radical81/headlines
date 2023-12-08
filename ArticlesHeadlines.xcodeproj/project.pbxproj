@@ -39,6 +39,7 @@
 		86EF96782B2292B10062C877 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96772B2292B10062C877 /* NewsApi.swift */; };
 		86EF967A2B2293AE0062C877 /* ErrorWithMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96792B2293AE0062C877 /* ErrorWithMessage.swift */; };
 		86EF967C2B2294220062C877 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF967B2B2294220062C877 /* APIError.swift */; };
+		86EF967E2B22A6070062C877 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF967D2B22A6070062C877 /* Response.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		86EF96772B2292B10062C877 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		86EF96792B2293AE0062C877 /* ErrorWithMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWithMessage.swift; sourceTree = "<group>"; };
 		86EF967B2B2294220062C877 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		86EF967D2B22A6070062C877 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			children = (
 				863B73542B20456500639F25 /* Headline.swift */,
 				86EF965C2B2135150062C877 /* Source.swift */,
+				86EF967D2B22A6070062C877 /* Response.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -426,6 +429,7 @@
 				863B735A2B2047B600639F25 /* UIImageViewExtension.swift in Sources */,
 				863B73572B2045EC00639F25 /* HeadlineViewModel.swift in Sources */,
 				863B735D2B2074C400639F25 /* ImageError.swift in Sources */,
+				86EF967E2B22A6070062C877 /* Response.swift in Sources */,
 				86EF96632B2143970062C877 /* HeadlineItemTableViewCell.swift in Sources */,
 				86877EE82B200A0F008A190A /* SceneDelegate.swift in Sources */,
 				86EF96702B21F3030062C877 /* UIAlertControllerExtension.swift in Sources */,
