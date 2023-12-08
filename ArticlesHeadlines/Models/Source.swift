@@ -12,7 +12,7 @@ struct Source: Codable {
   /// ID of the news source.
   var id: String
   /// Name of the news source.
-  var name: String
+  var name: String?
   /// Description
   var description: String?
   /// URL link

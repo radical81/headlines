@@ -25,7 +25,7 @@ struct SourceViewModel {
   
   /// Name of the news source.
   var name: String {
-    source.name
+    source.name ?? ""
   }
   /// True if the source is selected.
   var isSelected: Bool {

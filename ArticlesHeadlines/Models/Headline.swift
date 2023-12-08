@@ -9,10 +9,10 @@ import Foundation
 
 /// Represents the top headlines data returned from the News API.
 struct Headline: Codable {
-  var title: String
+  var title: String?
   var description: String?
-  var author: String
-  var url: String
+  var author: String?
+  var url: String?
   var urlToImage: String?
 }
 

@@ -19,7 +19,7 @@ struct HeadlineViewModel {
   
   // MARK: - Computed Properties
   var title: String {
-    headline.title
+    headline.title ?? ""
   }
   
   var description: String {
@@ -27,11 +27,11 @@ struct HeadlineViewModel {
   }
   
   var author: String {
-    headline.author
+    headline.author ?? ""
   }
   
   var articleUrl: String {
-    headline.url
+    headline.url ?? ""
   }
   
   var imageUrl: URL? {
