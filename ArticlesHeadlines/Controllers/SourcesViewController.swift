@@ -13,8 +13,16 @@ class SourcesViewController: UITableViewController {
   var dataForLoading: Loadable<[Source]> = .notLoaded {
     didSet {
       switch dataForLoading {
-      case .loaded(let data):
-        sources = data.map {
+      case .loaded(let data): 
+        let sourcesFromStore = LocalStore().newsSources
+        // Make sure that if the source in store is already selected, it will continue to be selected.
+        var freshData = data
+        for i in freshData.indices {
+          if let match = sourcesFromStore.findMatch(freshData[i]), match.selected == true{
+            freshData[i].selected = true // Overwrite fresh data with store's values
+          }
+        }
+        sources = freshData.map {
           SourceViewModel($0)
         }
       default:
@@ -86,13 +94,7 @@ class SourcesViewController: UITableViewController {
 
   /// Fetch data
   func fetchData() async {
+    dataForLoading = .loading
     dataForLoading = await ApiInstance.shared.fetchSources()
-    let sourcesFromStore = LocalStore().newsSources
-    for i in sources.indices {
-      if let match = sourcesFromStore.findMatch(sources[i].source) {
-        sources[i].source = match
-      }
-    }
-    print(sources)
   }
 }

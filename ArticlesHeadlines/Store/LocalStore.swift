@@ -82,7 +82,6 @@ struct LocalStore {
       $0 == source
     }
     currentSources.append(source)
-//    print("\(currentSources)\n\n")
     do {
       let data = try encoder.encode(currentSources)
       store.set(data, forKey: newsSourcesKey)
