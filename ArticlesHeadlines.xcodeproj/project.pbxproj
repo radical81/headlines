@@ -97,6 +97,7 @@
 		86EF96792B2293AE0062C877 /* ErrorWithMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWithMessage.swift; sourceTree = "<group>"; };
 		86EF967B2B2294220062C877 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		86EF967D2B22A6070062C877 /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
+		86EF96802B22A9C20062C877 /* Programmatic UIKit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Programmatic UIKit.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +179,7 @@
 		86877EE42B200A0F008A190A /* ArticlesHeadlines */ = {
 			isa = PBXGroup;
 			children = (
+				86EF967F2B22A9A50062C877 /* Architecture Decisions */,
 				863B735B2B2074A400639F25 /* Enums */,
 				86E99B762B200F9300F7BF26 /* Controllers */,
 				863B73582B20473D00639F25 /* Extensions */,
@@ -277,6 +279,14 @@
 				86EF96772B2292B10062C877 /* NewsApi.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		86EF967F2B22A9A50062C877 /* Architecture Decisions */ = {
+			isa = PBXGroup;
+			children = (
+				86EF96802B22A9C20062C877 /* Programmatic UIKit.md */,
+			);
+			path = "Architecture Decisions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
