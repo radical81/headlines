@@ -39,7 +39,7 @@ struct LocalStore: Storage {
   }
   
   /// Store headlines
-  func saveHeadline(_ headline: Headline) {
+  func saveHeadline(_ headline: Headline) throws {
     var currentHeadlines = savedHeadlines
     currentHeadlines.removeAll {
       $0 == headline
@@ -49,7 +49,7 @@ struct LocalStore: Storage {
       let data = try encoder.encode(currentHeadlines)
       store.set(data, forKey: savedHeadlinesKey)
     } catch {
-      print("Error encoding headline. (\(error)")
+      throw StoreError.saveFailed("Failed to save headline. Please try again.")
     }
   }
 

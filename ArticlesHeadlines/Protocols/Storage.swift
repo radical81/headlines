@@ -19,7 +19,7 @@ protocol Storage {
   var savedHeadlines: [Headline] { get }
   
   /// Store headlines
-  func saveHeadline(_ headline: Headline)
+  func saveHeadline(_ headline: Headline) throws
 
   /// Delete headline
   func deleteHeadline(_ headline: Headline)

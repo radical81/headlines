@@ -60,7 +60,14 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   }
   
   @objc func saveItem() {
-    Shared.storage.saveHeadline(headline.headline)
+    do {
+      try Shared.storage.saveHeadline(headline.headline)
+      self.present(UIAlertController.success(message: "The headline has been saved."), animated: true)
+    } catch StoreError.saveFailed(let message) {
+      self.present(UIAlertController.errorAlert(title: "Save Failed", message: message), animated: true)
+    } catch {
+      print("An error has occured.")
+    }
   }
   
   @objc func deleteItem() {
