@@ -38,6 +38,7 @@
 		86EF96752B2291200062C877 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96742B2291200062C877 /* Loadable.swift */; };
 		86EF96782B2292B10062C877 /* NewsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96772B2292B10062C877 /* NewsApi.swift */; };
 		86EF967A2B2293AE0062C877 /* ErrorWithMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96792B2293AE0062C877 /* ErrorWithMessage.swift */; };
+		86EF967C2B2294220062C877 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF967B2B2294220062C877 /* APIError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		86EF96742B2291200062C877 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
 		86EF96772B2292B10062C877 /* NewsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsApi.swift; sourceTree = "<group>"; };
 		86EF96792B2293AE0062C877 /* ErrorWithMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWithMessage.swift; sourceTree = "<group>"; };
+		86EF967B2B2294220062C877 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +136,7 @@
 			children = (
 				863B735C2B2074C400639F25 /* ImageError.swift */,
 				86EF96742B2291200062C877 /* Loadable.swift */,
+				86EF967B2B2294220062C877 /* APIError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				86EF96752B2291200062C877 /* Loadable.swift in Sources */,
 				86EF96732B22909C0062C877 /* NewsRetriever.swift in Sources */,
 				86EF966B2B215AFA0062C877 /* ArticleViewController.swift in Sources */,
+				86EF967C2B2294220062C877 /* APIError.swift in Sources */,
 				86EF965F2B2136440062C877 /* SourceItem.swift in Sources */,
 				86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */,
 				86EF966E2B2189B50062C877 /* LocalStore.swift in Sources */,
