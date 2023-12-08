@@ -88,6 +88,7 @@
 		86877F092B200A12008A190A /* ArticlesHeadlinesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesHeadlinesUITests.swift; sourceTree = "<group>"; };
 		86877F0B2B200A12008A190A /* ArticlesHeadlinesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesHeadlinesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		86D866072B22E1710097B092 /* SourceViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModelTests.swift; sourceTree = "<group>"; };
+		86D866092B22EAF70097B092 /* ArticlesHeadlines.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = file; name = ArticlesHeadlines.xctestplan; path = ArticlesHeadlinesTests/ArticlesHeadlines.xctestplan; sourceTree = SOURCE_ROOT; };
 		86EF965C2B2135150062C877 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		86EF965E2B2136440062C877 /* SourceItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceItem.swift; sourceTree = "<group>"; };
 		86EF96602B2137420062C877 /* SourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceViewModel.swift; sourceTree = "<group>"; };
@@ -317,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				86EF968F2B22D5450062C877 /* HeadlineViewModelTests.swift */,
+				86D866092B22EAF70097B092 /* ArticlesHeadlines.xctestplan */,
 				86D866072B22E1710097B092 /* SourceViewModelTests.swift */,
 			);
 			path = ViewModelTests;
