@@ -19,6 +19,20 @@ struct Source: Codable {
   var url: String?
   /// Turns the news source on or off. If it's off, there will be no news retrieved from it.
   var selected: Bool
+  
+  /// Use to decode from JSON.
+  init(from decoder: Decoder) throws {
+    let values = try decoder.container(keyedBy: CodingKeys.self)
+    id = try values.decode(String.self, forKey: .id)
+    name = try values.decode(String.self, forKey: .name)
+    description = try values.decodeIfPresent(String.self, forKey: .description)
+    url = try values.decode(String.self, forKey: .url)
+    selected = false
+  }
+
+  enum CodingKeys: String, CodingKey {
+    case id, name, description, url
+  }
 }
 
 // MARK: - Equatable

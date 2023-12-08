@@ -23,7 +23,7 @@ struct HeadlineViewModel {
   }
   
   var description: String {
-    headline.description
+    headline.description ?? ""
   }
   
   var author: String {
@@ -35,7 +35,7 @@ struct HeadlineViewModel {
   }
   
   var imageUrl: URL? {
-    guard let url = URL(string: headline.urlToImage) else {
+    guard let url = URL(string: headline.urlToImage ?? "") else {
       return nil
     }
     return url
