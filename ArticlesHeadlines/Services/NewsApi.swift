@@ -10,6 +10,11 @@ import Foundation
 /// Implements the NewsRetriever protocol with the News API as the data source.
 struct NewsApi: NewsRetriever {
   
+  /// The API key.
+  var apiKey: String {
+    "bb911c2fd54f4efd829d0931cafbc333"
+  }
+    
   /// News API base URL.
   var baseUrl: String {
     "https://newsapi.org"
@@ -17,6 +22,20 @@ struct NewsApi: NewsRetriever {
   
   /// Fetches the headlines.
   func fetchHeadlines(_ sources: [Source]) async -> Loadable<[Headline]> {
+//    guard var components = URLComponents(string: baseUrl) else {
+//      return .failed(APIError.malformed("Invalid URL."))
+//    }
+//
+//    let sources = LocalStore().newsSources.map{ $0.id }.joined(separator: ",")
+//    components.queryItems = [
+//        URLQueryItem(name: "sources", value: sources),
+//        URLQueryItem(name: "")
+//    ]
+//
+//    guard let url = components.url else {
+//        throw URLError(.badURL)
+//    }
+//    
 //    guard let url = URL(String: baseUrl) else {
 //      return .failed(APIError.malformed("Invalid URL."))
 //    }
