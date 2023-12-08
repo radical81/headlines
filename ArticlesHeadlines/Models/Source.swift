@@ -9,6 +9,8 @@ import Foundation
 
 /// Tracks the source of the news for filtered content.
 struct Source: Codable {
+  /// ID of the news source.
+  var id: String
   /// Name of the news source.
   var name: String
   /// Description
@@ -24,7 +26,7 @@ struct Source: Codable {
 extension Source: Equatable {
   /// Checks if the news sources are the same
   static func == (lhs: Self, rhs: Self) -> Bool {
-    lhs.name == rhs.name
+    lhs.id == rhs.id
   }
 }
 

@@ -68,8 +68,8 @@ class SourcesViewController: UITableViewController {
   func fetchData() {
     //TODO: Real data
     var freshLoad = [
-      SourceViewModel(Source(name: "abc", description: "local AU news", selected: true)),
-      SourceViewModel(Source(name: "sky news", selected: true))
+      SourceViewModel(Source(id: "abc-news-au", name: "abc", description: "local AU news", selected: true)),
+      SourceViewModel(Source(id: "sky-news", name: "sky news", selected: true))
     ]
     let sourcesFromStore = LocalStore().newsSources
     for i in freshLoad.indices {

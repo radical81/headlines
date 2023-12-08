@@ -18,6 +18,11 @@ struct SourceViewModel {
   
   // MARK: - Computed Properties
   
+  /// ID of the news source.
+  var id: String {
+    source.id
+  }
+  
   /// Name of the news source.
   var name: String {
     source.name
