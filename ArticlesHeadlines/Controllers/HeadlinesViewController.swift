@@ -59,6 +59,6 @@ class HeadlinesViewController: UIViewController {
   /// Fetch data/
   func fetchHeadlines() async {
     dataForLoading = .loading
-    dataForLoading = await ApiInstance.shared.fetchHeadlines([])
+    dataForLoading = await Shared.shared.fetchHeadlines([])
   }
 }

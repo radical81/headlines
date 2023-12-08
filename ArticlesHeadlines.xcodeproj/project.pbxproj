@@ -40,7 +40,7 @@
 		86EF967A2B2293AE0062C877 /* ErrorWithMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96792B2293AE0062C877 /* ErrorWithMessage.swift */; };
 		86EF967C2B2294220062C877 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF967B2B2294220062C877 /* APIError.swift */; };
 		86EF967E2B22A6070062C877 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF967D2B22A6070062C877 /* Response.swift */; };
-		86EF96852B22AD770062C877 /* ApiInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96842B22AD770062C877 /* ApiInstance.swift */; };
+		86EF96852B22AD770062C877 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96842B22AD770062C877 /* Shared.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,7 +102,7 @@
 		86EF96812B22AA910062C877 /* hide-api-implementation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "hide-api-implementation.md"; sourceTree = "<group>"; };
 		86EF96822B22AB570062C877 /* wrap-response-in-loadable.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "wrap-response-in-loadable.md"; sourceTree = "<group>"; };
 		86EF96832B22AC020062C877 /* use-async-await.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "use-async-await.md"; sourceTree = "<group>"; };
-		86EF96842B22AD770062C877 /* ApiInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiInstance.swift; sourceTree = "<group>"; };
+		86EF96842B22AD770062C877 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		86EF96862B22AE530062C877 /* extend-uikit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "extend-uikit.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -282,7 +282,7 @@
 		86EF96762B22929E0062C877 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				86EF96842B22AD770062C877 /* ApiInstance.swift */,
+				86EF96842B22AD770062C877 /* Shared.swift */,
 				86EF96772B2292B10062C877 /* NewsApi.swift */,
 			);
 			path = Services;
@@ -458,7 +458,7 @@
 				863B73512B202DCD00639F25 /* SourcesViewController.swift in Sources */,
 				86EF967A2B2293AE0062C877 /* ErrorWithMessage.swift in Sources */,
 				86EF96612B2137420062C877 /* SourceViewModel.swift in Sources */,
-				86EF96852B22AD770062C877 /* ApiInstance.swift in Sources */,
+				86EF96852B22AD770062C877 /* Shared.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

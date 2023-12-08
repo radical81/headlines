@@ -95,6 +95,6 @@ class SourcesViewController: UITableViewController {
   /// Fetch data
   func fetchData() async {
     dataForLoading = .loading
-    dataForLoading = await ApiInstance.shared.fetchSources()
+    dataForLoading = await Shared.shared.fetchSources()
   }
 }
