@@ -108,6 +108,7 @@
 		86EF96862B22AE530062C877 /* extend-uikit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "extend-uikit.md"; sourceTree = "<group>"; };
 		86EF96872B22CF070062C877 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		86EF96892B22D1C10062C877 /* StoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
+		86EF968B2B22D3C90062C877 /* store-userdefaults.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "store-userdefaults.md"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,6 +303,7 @@
 				86EF96822B22AB570062C877 /* wrap-response-in-loadable.md */,
 				86EF96832B22AC020062C877 /* use-async-await.md */,
 				86EF96862B22AE530062C877 /* extend-uikit.md */,
+				86EF968B2B22D3C90062C877 /* store-userdefaults.md */,
 			);
 			path = "Architecture Decisions";
 			sourceTree = "<group>";
