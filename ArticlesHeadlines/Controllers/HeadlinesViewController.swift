@@ -50,6 +50,6 @@ class HeadlinesViewController: UIViewController {
   
   /// Fetch data/
   func fetchHeadlines() async {
-    dataForLoading = await NewsApi().fetchHeadlines([])
+    dataForLoading = await ApiInstance.shared.fetchHeadlines([])
   }
 }
