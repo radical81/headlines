@@ -42,6 +42,7 @@
 		86EF967E2B22A6070062C877 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF967D2B22A6070062C877 /* Response.swift */; };
 		86EF96852B22AD770062C877 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96842B22AD770062C877 /* Shared.swift */; };
 		86EF96882B22CF070062C877 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96872B22CF070062C877 /* Storage.swift */; };
+		86EF968A2B22D1C10062C877 /* StoreError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EF96892B22D1C10062C877 /* StoreError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		86EF96842B22AD770062C877 /* Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
 		86EF96862B22AE530062C877 /* extend-uikit.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "extend-uikit.md"; sourceTree = "<group>"; };
 		86EF96872B22CF070062C877 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		86EF96892B22D1C10062C877 /* StoreError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 				863B735C2B2074C400639F25 /* ImageError.swift */,
 				86EF96742B2291200062C877 /* Loadable.swift */,
 				86EF967B2B2294220062C877 /* APIError.swift */,
+				86EF96892B22D1C10062C877 /* StoreError.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				86EF967C2B2294220062C877 /* APIError.swift in Sources */,
 				86EF965F2B2136440062C877 /* SourceItem.swift in Sources */,
 				86810B5F2B201FF4001888FD /* TabBarViewController.swift in Sources */,
+				86EF968A2B22D1C10062C877 /* StoreError.swift in Sources */,
 				86EF966E2B2189B50062C877 /* LocalStore.swift in Sources */,
 				86EF96782B2292B10062C877 /* NewsApi.swift in Sources */,
 				863B736A2B207D1000639F25 /* HeadlinesViewController+UICollectionView.swift in Sources */,
