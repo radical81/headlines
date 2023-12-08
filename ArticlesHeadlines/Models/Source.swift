@@ -20,6 +20,14 @@ struct Source: Codable {
   /// Turns the news source on or off. If it's off, there will be no news retrieved from it.
   var selected: Bool
   
+  /// Initialise using parameter.
+  init(id: String, name: String?, description: String?, url: String?, selected: Bool) {
+    self.id = id
+    self.name = name
+    self.description = description
+    self.url = url
+    self.selected = selected
+  }
   /// Use to decode from JSON.
   init(from decoder: Decoder) throws {
     let values = try decoder.container(keyedBy: CodingKeys.self)
