@@ -12,6 +12,6 @@ struct Shared {
   /// An Instance of the news retriever.
   /// It is of type NewsRetriever and the implementation instance is NewsAPI(). This can be changed later on to point to a different API.
   static let news: NewsRetriever = NewsApi()
-  
+  /// An instance of the local store.
   static let storage: Storage = LocalStore()
 }
