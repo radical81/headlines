@@ -75,6 +75,7 @@ struct NewsApi: NewsRetriever {
     
     components.queryItems = [
         URLQueryItem(name: "country", value: "au"),
+        URLQueryItem(name: "language", value: "en"),
         URLQueryItem(name: "apiKey", value: apiKey)
     ]
 
