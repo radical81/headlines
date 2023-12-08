@@ -8,11 +8,17 @@
 import Foundation
 
 /// Convenience functions for managing local store.
-struct LocalStore {
+struct LocalStore: Storage {
   // MARK: - Properties
   let store = UserDefaults.standard
-  let newsSourcesKey = "newsSources"
-  let savedHeadlinesKey = "savedHeadlines"
+  /// News source key
+  var newsSourcesKey: String {
+    "newsSources"
+  }
+  /// Headlines key
+  var savedHeadlinesKey: String {
+    "savedHeadlines"
+  }
   /// JSON encoder
   let encoder = JSONEncoder()
   // JSON Decoder
