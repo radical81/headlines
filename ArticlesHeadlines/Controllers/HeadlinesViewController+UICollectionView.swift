@@ -31,7 +31,7 @@ extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewD
   @objc func handleRefreshControl() {
     // Refresh content
     Task {
-      await fetchHeadlines()
+      await headlinesViewModel.fetchHeadlines()
       // Dismiss the refresh control.
       DispatchQueue.main.async {
         self.headlinesList?.refreshControl?.endRefreshing()

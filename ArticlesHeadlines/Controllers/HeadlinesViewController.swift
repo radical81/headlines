@@ -16,20 +16,7 @@ class HeadlinesViewController: UIViewController {
   var headlinesList: HeadlinesListCollectionView?
   
   /// The view model for this collection of headlines.
-  var headlinesViewModel: HeadlinesViewModel = HeadlinesViewModel([])
-  
-  /// The data source for the list.
-  var dataForLoading: Loadable<[Headline]> = .notLoaded {
-    didSet {
-      switch dataForLoading {
-      case .loaded(let data):
-        headlinesViewModel = HeadlinesViewModel(data)
-        headlinesList?.reloadData()
-      default:
-        break
-      }
-    }
-  }
+  var headlinesViewModel: HeadlinesViewModel = HeadlinesViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -44,21 +31,11 @@ class HeadlinesViewController: UIViewController {
                                           for: .valueChanged)
     view.addSubview(headlinesList ?? UICollectionView())
     Task {
-      await fetchHeadlines()
-      switch dataForLoading {
-      case .failed(let error):
-        if let error = error as? ErrorWithMessage {
-          self.present(UIAlertController.errorAlert(title: "Error", message: error.message), animated: true)
-        }
-      default:
-        break
+      await headlinesViewModel.fetchHeadlines()
+      if let error = headlinesViewModel.errorMessage {
+        self.present(UIAlertController.errorAlert(title: "Error", message: error.message), animated: true)
       }
+      headlinesList?.reloadData()
     }
-  }
-  
-  /// Fetch data/
-  func fetchHeadlines() async {
-    dataForLoading = .loading
-    dataForLoading = await Shared.news.fetchHeadlines([])
   }
 }

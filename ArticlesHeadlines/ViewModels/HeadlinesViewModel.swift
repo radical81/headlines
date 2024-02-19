@@ -8,15 +8,44 @@
 import Foundation
 
 /// View model representing the collection of headlines.
-struct HeadlinesViewModel {
-  var headlines: [Headline]
-  
-  init(_ headines: [Headline]) {
-    self.headlines = headines
+class HeadlinesViewModel {
+  var dataForLoading: Loadable<[Headline]> = .notLoaded {
+    didSet {
+      switch dataForLoading {
+      case .loaded(let data):
+        headlines = data
+      default:
+        break
+      }
+    }
   }
   
+  /// The collection of headlines if they are loaded.
+  var headlines: [Headline] = []
+
+  // MARK: - Computed Properties
   /// The collection of headlines represented by individual view models for each headline.
   var headlineViewModels: [HeadlineViewModel] {
     headlines.map { HeadlineViewModel($0) }
+  }
+  
+  /// Retrieve any error messages.
+  var errorMessage: ErrorWithMessage? {
+    switch dataForLoading {
+    case .failed(let error):
+      if let error = error as? ErrorWithMessage {
+        return error
+      }
+    default:
+      return nil
+    }
+    return nil
+  }
+
+  // MARK: - Methods
+  /// Fetch data
+  func fetchHeadlines() async {
+    dataForLoading = .loading
+    dataForLoading = await Shared.news.fetchHeadlines([])
   }
 }
