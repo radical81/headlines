@@ -15,27 +15,22 @@ class HeadlinesViewController: UIViewController {
   /// The list of headlines, a collection view.
   var headlinesList: HeadlinesListCollectionView?
   
+  /// The view model for this collection of headlines.
+  var headlinesViewModel: HeadlinesViewModel = HeadlinesViewModel([])
+  
   /// The data source for the list.
   var dataForLoading: Loadable<[Headline]> = .notLoaded {
     didSet {
       switch dataForLoading {
       case .loaded(let data):
-        headlines = data.map {
-          HeadlineViewModel($0)
-        }
+        headlinesViewModel = HeadlinesViewModel(data)
+        headlinesList?.reloadData()
       default:
         break
       }
     }
   }
   
-  /// The view model instances for the list.
-  var headlines: [HeadlineViewModel] = [] {
-    didSet {
-      headlinesList?.reloadData()
-    }
-  }
-
   override func viewDidLoad() {
     super.viewDidLoad()
     
