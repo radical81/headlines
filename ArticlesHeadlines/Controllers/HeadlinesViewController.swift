@@ -16,7 +16,7 @@ class HeadlinesViewController: UIViewController {
   var headlinesList: HeadlinesListCollectionView?
   
   /// The view model for this collection of headlines.
-  var headlinesViewModel: HeadlinesViewModel = HeadlinesViewModel()
+  var viewModel: HeadlinesViewModel = HeadlinesViewModel()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -31,8 +31,8 @@ class HeadlinesViewController: UIViewController {
                                           for: .valueChanged)
     view.addSubview(headlinesList ?? UICollectionView())
     Task {
-      await headlinesViewModel.fetchHeadlines()
-      if let error = headlinesViewModel.errorMessage {
+      await viewModel.fetchHeadlines()
+      if let error = viewModel.errorMessage {
         self.present(UIAlertController.errorAlert(title: "Error", message: error.message), animated: true)
       }
       headlinesList?.reloadData()
