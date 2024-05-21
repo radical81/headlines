@@ -8,9 +8,9 @@ import UIKit
 /// The table cell for the Saved headlines table.
 class HeadlineItemTableViewCell: UITableViewCell {
   // MARK: - Data source
-  var headline: HeadlineViewModel? {
+  var viewModel: HeadlineViewModel? {
     didSet {
-      headlineItem.viewModel = headline
+      headlineItem.viewModel = viewModel
     }
   }
   

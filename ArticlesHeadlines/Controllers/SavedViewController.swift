@@ -35,7 +35,7 @@ class SavedViewController: UITableViewController {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedHeadlinesList", for: indexPath) as? HeadlineItemTableViewCell else {
       return UITableViewCell()
     }
-    cell.headline = viewModel.headlineViewModels[indexPath.row]
+    cell.viewModel = viewModel.headlineViewModels[indexPath.row]
     return cell
   }
      
