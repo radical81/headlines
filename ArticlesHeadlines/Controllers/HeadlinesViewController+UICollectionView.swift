@@ -16,7 +16,7 @@ extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewD
     guard let headlineItem = collectionView.dequeueReusableCell(withReuseIdentifier: "HeadlineList", for: indexPath) as? HeadlineItemCollectionViewCell else {
       return UICollectionViewCell()
     }
-    headlineItem.headline = viewModel.headlineViewModels[indexPath.row]
+    headlineItem.viewModel = viewModel.headlineViewModels[indexPath.row]
     return headlineItem
   }
   
