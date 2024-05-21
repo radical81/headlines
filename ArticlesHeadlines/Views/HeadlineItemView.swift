@@ -73,7 +73,6 @@ class HeadlineItemView: UIView {
     verticalStack.translatesAutoresizingMaskIntoConstraints = false
     let constraints = [
       verticalStack.topAnchor.constraint(equalTo: thumbnail.topAnchor),
-      verticalStack.leadingAnchor.constraint(equalTo: thumbnail.trailingAnchor, constant: 10),
       verticalStack.bottomAnchor.constraint(equalTo: thumbnail.bottomAnchor),
       verticalStack.trailingAnchor.constraint(equalTo: horizontalStack.trailingAnchor, constant: -10)
     ]
