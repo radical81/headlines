@@ -10,25 +10,25 @@ class HeadlineItemCollectionViewCell: UICollectionViewCell {
   // MARK: - Data source
   var viewModel: HeadlineViewModel? {
     didSet {
-      headlineItem.viewModel = viewModel
+      headlineItemView.viewModel = viewModel
     }
   }
   
   // MARK: - View
-  var headlineItem = HeadlineItemView()
+  var headlineItemView = HeadlineItemView()
 
   // MARK: - Methods
   override init(frame: CGRect) {
     super.init(frame: frame)
-    headlineItem = HeadlineItemView(frame: self.bounds)
+    headlineItemView = HeadlineItemView(frame: self.bounds)
     decorateCell()
-    addSubview(headlineItem)
+    addSubview(headlineItemView)
   }
   
   func decorateCell() {
-    headlineItem.layer.borderColor = UIColor.lightGray.cgColor
-    headlineItem.layer.borderWidth = 1
-    headlineItem.layer.cornerRadius = 5
+    headlineItemView.layer.borderColor = UIColor.lightGray.cgColor
+    headlineItemView.layer.borderWidth = 1
+    headlineItemView.layer.cornerRadius = 5
   }
   
   required init?(coder: NSCoder) {
