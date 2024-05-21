@@ -10,7 +10,7 @@ class HeadlineItemCollectionViewCell: UICollectionViewCell {
   // MARK: - Data source
   var viewModel: HeadlineViewModel? {
     didSet {
-      headlineItem.headline = viewModel
+      headlineItem.viewModel = viewModel
     }
   }
   

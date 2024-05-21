@@ -10,7 +10,7 @@ import UIKit
 class HeadlineItemView: UIView {
   
   // MARK: - Data source
-  var headline: HeadlineViewModel? {
+  var viewModel: HeadlineViewModel? {
     didSet {
       updateWithData()
     }
@@ -46,13 +46,13 @@ class HeadlineItemView: UIView {
   
   /// Updates UI with data from view model.
   func updateWithData() {
-    guard let headline = headline else {
+    guard let viewModel = viewModel else {
       return
     }
-    title.text = headline.title
-    summary.text = headline.description
-    author.text = headline.author
-    guard let url = headline.imageUrl else {
+    title.text = viewModel.title
+    summary.text = viewModel.description
+    author.text = viewModel.author
+    guard let url = viewModel.imageUrl else {
       return
     }
     Task {

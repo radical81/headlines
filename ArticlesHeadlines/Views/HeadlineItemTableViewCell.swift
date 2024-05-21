@@ -10,7 +10,7 @@ class HeadlineItemTableViewCell: UITableViewCell {
   // MARK: - Data source
   var headline: HeadlineViewModel? {
     didSet {
-      headlineItem.headline = headline
+      headlineItem.viewModel = headline
     }
   }
   
