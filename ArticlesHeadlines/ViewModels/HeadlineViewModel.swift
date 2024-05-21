@@ -23,7 +23,7 @@ struct HeadlineViewModel {
   }
   
   var description: String {
-    headline.description ?? ""
+    headline.description ?? "(No description)"
   }
   
   var author: String {
