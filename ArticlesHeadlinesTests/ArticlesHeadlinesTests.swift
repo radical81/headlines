@@ -2,8 +2,6 @@
 //  ArticlesHeadlinesTests.swift
 //  ArticlesHeadlinesTests
 //
-//  Created by Rex Jason Alobba on 6/12/2023.
-//
 
 import XCTest
 @testable import ArticlesHeadlines

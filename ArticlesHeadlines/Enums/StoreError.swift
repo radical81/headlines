@@ -2,8 +2,6 @@
 //  StoreError.swift
 //  ArticlesHeadlines
 //
-//  Created by Rex Jason Alobba on 8/12/2023.
-//
 
 /// Catches errors when handling storage.
 enum StoreError: ErrorWithMessage {

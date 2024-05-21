@@ -2,8 +2,6 @@
 //  SourceViewModelTests.swift
 //  ArticlesHeadlinesTests
 //
-//  Created by Rex Jason Alobba on 8/12/2023.
-//
 
 import XCTest
 @testable import ArticlesHeadlines
