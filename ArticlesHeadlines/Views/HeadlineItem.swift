@@ -72,7 +72,6 @@ class HeadlineItem: UIView {
     verticalStack.axis = .vertical
     verticalStack.distribution = .equalSpacing
     verticalStack.alignment = .top
-    verticalStack.spacing = 10
     verticalStack.translatesAutoresizingMaskIntoConstraints = false
     let constraints = [
       verticalStack.topAnchor.constraint(equalTo: thumbnail.topAnchor),
@@ -116,6 +115,11 @@ class HeadlineItem: UIView {
   func decorateTitle() {
     title.font = UIFont.boldSystemFont(ofSize: 16)
     title.textAlignment = .left
+    title.translatesAutoresizingMaskIntoConstraints = false
+    let constraints = [
+      title.topAnchor.constraint(equalTo: verticalStack.topAnchor)
+    ]
+    NSLayoutConstraint.activate(constraints)
   }
 
   func decorateSummary() {
