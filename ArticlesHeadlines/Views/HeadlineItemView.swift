@@ -1,5 +1,5 @@
 //
-//  HeadlineItem.swift
+//  HeadlineItemView.swift
 //  ArticlesHeadlines
 //
 
@@ -7,7 +7,7 @@ import Foundation
 import UIKit
 
 /// Represents a single item in the list of headlines.
-class HeadlineItem: UIView {
+class HeadlineItemView: UIView {
   
   // MARK: - Data source
   var headline: HeadlineViewModel? {

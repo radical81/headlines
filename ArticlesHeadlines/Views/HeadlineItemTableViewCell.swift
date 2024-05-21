@@ -15,12 +15,12 @@ class HeadlineItemTableViewCell: UITableViewCell {
   }
   
   // MARK: - View
-  var headlineItem = HeadlineItem()
+  var headlineItem = HeadlineItemView()
 
   //MARK: - Methods
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    headlineItem = HeadlineItem()
+    headlineItem = HeadlineItemView()
     addSubview(headlineItem)
     decorateHeadlineItem()
     

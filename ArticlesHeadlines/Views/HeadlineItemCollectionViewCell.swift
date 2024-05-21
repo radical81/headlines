@@ -15,12 +15,12 @@ class HeadlineItemCollectionViewCell: UICollectionViewCell {
   }
   
   // MARK: - View
-  var headlineItem = HeadlineItem()
+  var headlineItem = HeadlineItemView()
 
   // MARK: - Methods
   override init(frame: CGRect) {
     super.init(frame: frame)
-    headlineItem = HeadlineItem(frame: self.bounds)
+    headlineItem = HeadlineItemView(frame: self.bounds)
     decorateCell()
     addSubview(headlineItem)
   }
