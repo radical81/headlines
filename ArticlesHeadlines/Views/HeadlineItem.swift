@@ -37,13 +37,13 @@ class HeadlineItem: UIView {
   }
   
   func initSubviews() {
+    addSubview(horizontalStack)
+    decorateHorizontalStack()
     decorateThumbnail()
+    decorateVerticalStack()
     decorateTitle()
     decorateSummary()
     decorateAuthor()
-    decorateVerticalStack()
-    decorateHorizontalStack()
-    addSubview(horizontalStack)
   }
   
   /// Updates UI with data from view model.
@@ -68,35 +68,54 @@ class HeadlineItem: UIView {
     verticalStack.addArrangedSubview(title)
     verticalStack.addArrangedSubview(summary)
     verticalStack.addArrangedSubview(author)
-    verticalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
     verticalStack.isLayoutMarginsRelativeArrangement = true
     verticalStack.axis = .vertical
     verticalStack.distribution = .equalSpacing
-    verticalStack.spacing = 20
+    verticalStack.alignment = .top
+    verticalStack.spacing = 10
+    verticalStack.translatesAutoresizingMaskIntoConstraints = false
+    let constraints = [
+      verticalStack.topAnchor.constraint(equalTo: thumbnail.topAnchor),
+      verticalStack.leadingAnchor.constraint(equalTo: thumbnail.trailingAnchor, constant: 10),
+      verticalStack.bottomAnchor.constraint(equalTo: thumbnail.bottomAnchor),
+      verticalStack.trailingAnchor.constraint(equalTo: horizontalStack.trailingAnchor, constant: -10)
+    ]
+    NSLayoutConstraint.activate(constraints)
   }
-  
-  func decorateTitle() {
-    title.font = UIFont.boldSystemFont(ofSize: 16)
-    title.textAlignment = .left
-  }
-  
+    
   func decorateThumbnail() {
-    thumbnail.frame = CGRect(x: 0, y: 0, width: 100, height: 100)
     thumbnail.contentMode = .scaleToFill
-    thumbnail.widthAnchor.constraint(equalToConstant: 100).isActive = true
-    thumbnail.heightAnchor.constraint(equalToConstant: 100).isActive = true
+    thumbnail.translatesAutoresizingMaskIntoConstraints = false
+    let constraints = [
+      thumbnail.centerYAnchor.constraint(equalTo: horizontalStack.centerYAnchor),
+      thumbnail.heightAnchor.constraint(equalTo: horizontalStack.heightAnchor, multiplier: 0.8),
+      thumbnail.widthAnchor.constraint(equalTo: thumbnail.heightAnchor)
+    ]
+    NSLayoutConstraint.activate(constraints)
   }
   
   func decorateHorizontalStack() {
     horizontalStack.addArrangedSubview(thumbnail)
     horizontalStack.addArrangedSubview(verticalStack)
-    horizontalStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: 150)
     horizontalStack.isLayoutMarginsRelativeArrangement = true
     horizontalStack.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 10)
     horizontalStack.axis = .horizontal
     horizontalStack.distribution = .fillProportionally
     horizontalStack.alignment = .center
     horizontalStack.spacing = 20
+    horizontalStack.translatesAutoresizingMaskIntoConstraints = false
+    let constraints = [
+      horizontalStack.topAnchor.constraint(equalTo: topAnchor),
+      horizontalStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+      horizontalStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+      horizontalStack.trailingAnchor.constraint(equalTo: trailingAnchor)
+    ]
+    NSLayoutConstraint.activate(constraints)
+  }
+  
+  func decorateTitle() {
+    title.font = UIFont.boldSystemFont(ofSize: 16)
+    title.textAlignment = .left
   }
 
   func decorateSummary() {
@@ -104,7 +123,7 @@ class HeadlineItem: UIView {
     summary.lineBreakMode = .byTruncatingTail
     summary.numberOfLines = 2
   }
-  
+
   func decorateAuthor() {
     author.textAlignment = .left
   }
