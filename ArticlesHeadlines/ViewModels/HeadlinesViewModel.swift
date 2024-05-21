@@ -48,4 +48,19 @@ class HeadlinesViewModel {
     dataForLoading = .loading
     dataForLoading = await Shared.news.fetchHeadlines([])
   }
+  
+  /// Fetch saved headlines from storage.
+  func fetchSavedHeadlines() {
+    headlines = []
+    let savedHeadlines = Shared.storage.savedHeadlines
+    savedHeadlines.forEach { headline in
+      headlines.append(headline)
+    }
+  }
+  
+  /// Delete row and remove from store.
+  func delete(at indexPath: IndexPath) {
+    Shared.storage.deleteHeadline(headlines[indexPath.row])
+    headlines.remove(at: indexPath.row)    
+  }
 }

@@ -9,8 +9,9 @@ import UIKit
 
 class SavedViewController: UITableViewController {
 
-  /// The data source for the list.
-  var headlines: [HeadlineViewModel] = []
+  /// The view model for this collection of headlines.
+  var viewModel: HeadlinesViewModel = HeadlinesViewModel()
+
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,7 +19,8 @@ class SavedViewController: UITableViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
-    fetchData()
+    viewModel.fetchSavedHeadlines()
+    tableView.reloadData()
   }
   
   // MARK: - Table view data source
@@ -28,14 +30,14 @@ class SavedViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return headlines.count
+    return viewModel.headlineViewModels.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedHeadlinesList", for: indexPath) as? HeadlineItemTableViewCell else {
       return UITableViewCell()
     }
-    cell.headline = headlines[indexPath.row]
+    cell.headline = viewModel.headlineViewModels[indexPath.row]
     return cell
   }
      
@@ -62,7 +64,8 @@ class SavedViewController: UITableViewController {
     if editingStyle == .delete {
       // Delete the row from the data source
       let confirmation = UIAlertController.confirmDelete {
-        self.delete(at: indexPath)
+        self.viewModel.delete(at: indexPath)
+        tableView.deleteRows(at: [indexPath], with: .fade)
       }
       self.present(confirmation, animated: true)
     }
@@ -70,26 +73,8 @@ class SavedViewController: UITableViewController {
 
   /// Row selection
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let article = ArticleViewController(headlines[indexPath.row])
+    let article = ArticleViewController(viewModel.headlineViewModels[indexPath.row])
     article.showDeleteButton = true
     self.navigationController?.pushViewController(article, animated: true)
-  }
-  
-  /// Fetch data/
-  func fetchData() {
-    //TODO: Real data
-    headlines = []
-    let savedHeadlines = Shared.storage.savedHeadlines
-    savedHeadlines.forEach { headline in
-      headlines.append(HeadlineViewModel(headline))
-    }
-    tableView.reloadData()
-  }
-  
-  /// Delete row and remove from store.
-  func delete(at indexPath: IndexPath) {
-    Shared.storage.deleteHeadline(headlines[indexPath.row].headline)
-    headlines.remove(at: indexPath.row)
-    tableView.deleteRows(at: [indexPath], with: .fade)
   }
 }
