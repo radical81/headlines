@@ -10,18 +10,18 @@ class HeadlineItemTableViewCell: UITableViewCell {
   // MARK: - Data source
   var viewModel: HeadlineViewModel? {
     didSet {
-      headlineItem.viewModel = viewModel
+      headlineItemView.viewModel = viewModel
     }
   }
   
   // MARK: - View
-  var headlineItem = HeadlineItemView()
+  var headlineItemView = HeadlineItemView()
 
   //MARK: - Methods
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    headlineItem = HeadlineItemView()
-    addSubview(headlineItem)
+    headlineItemView = HeadlineItemView()
+    addSubview(headlineItemView)
     decorateHeadlineItem()
     
   }
@@ -31,12 +31,12 @@ class HeadlineItemTableViewCell: UITableViewCell {
   }
   
   func decorateHeadlineItem() {
-    headlineItem.translatesAutoresizingMaskIntoConstraints = false
+    headlineItemView.translatesAutoresizingMaskIntoConstraints = false
     let constraints = [
-      headlineItem.topAnchor.constraint(equalTo: topAnchor),
-      headlineItem.bottomAnchor.constraint(equalTo: bottomAnchor),
-      headlineItem.leadingAnchor.constraint(equalTo: leadingAnchor),
-      headlineItem.trailingAnchor.constraint(equalTo: trailingAnchor)
+      headlineItemView.topAnchor.constraint(equalTo: topAnchor),
+      headlineItemView.bottomAnchor.constraint(equalTo: bottomAnchor),
+      headlineItemView.leadingAnchor.constraint(equalTo: leadingAnchor),
+      headlineItemView.trailingAnchor.constraint(equalTo: trailingAnchor)
     ]
     NSLayoutConstraint.activate(constraints)
   }
