@@ -1,5 +1,4 @@
 #  Wrap Response in Loadable Enums
-#### 8 December 2023
 ---
 
 ### Status

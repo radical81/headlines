@@ -1,5 +1,4 @@
 #  Store in UserDefaults
-#### 8 December 2023
 ---
 
 ### Status

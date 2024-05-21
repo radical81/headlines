@@ -1,5 +1,4 @@
 #  Extend UIKit
-#### 8 December 2023
 ---
 
 ### Status

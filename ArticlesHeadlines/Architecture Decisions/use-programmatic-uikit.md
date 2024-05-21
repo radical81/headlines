@@ -1,5 +1,4 @@
 #  UIKit for Programmatic Views
-#### 8 December 2023
 ---
 
 ### Status

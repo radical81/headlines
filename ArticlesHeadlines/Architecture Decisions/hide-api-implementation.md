@@ -1,5 +1,4 @@
 #  Hide API Implementation
-#### 8 December 2023
 ---
 
 ### Status
