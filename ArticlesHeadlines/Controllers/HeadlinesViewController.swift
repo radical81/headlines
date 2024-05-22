@@ -34,4 +34,16 @@ class HeadlinesViewController: UIViewController {
       headlinesList?.reloadData()
     }
   }
+
+  @objc func handleRefreshControl() {
+    // Refresh content
+    Task {
+      await viewModel.fetchHeadlines()
+      // Dismiss the refresh control.
+      DispatchQueue.main.async {
+        self.headlinesList?.refreshControl?.endRefreshing()
+        self.headlinesList?.reloadData()
+      }
+    }
+  }
 }
