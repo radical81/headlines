@@ -23,3 +23,20 @@ enum Loadable<T> {
     }
   }
 }
+
+extension Loadable: Equatable {
+  static func == (lhs: Self, rhs: Self) -> Bool {
+    switch(lhs, rhs) {
+    case(.notLoaded, .notLoaded):
+      return true
+    case(.loading, .loading):
+      return true
+    case(.loaded(_), .loaded(_)):
+      return true
+    case(.failed(_), .failed(_)):
+      return true
+    default:
+      return false
+    }
+  }
+}
