@@ -10,7 +10,8 @@ import WebKit
 class ArticleViewController: UIViewController, WKUIDelegate {
 
   /// The data source
-  var headline: HeadlineItemViewModel
+  var headline: Headline
+  var viewModel: HeadlineItemViewModel
   
   /// Save button enabling
   var showSaveButton: Bool = false
@@ -18,8 +19,9 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   /// Delete button enabling
   var showDeleteButton: Bool = false
   
-  init(_ headline: HeadlineItemViewModel) {
+  init(_ headline: Headline) {
     self.headline = headline
+    self.viewModel = HeadlineItemViewModel(headline)
     super.init(nibName: nil, bundle: nil)
   }
   
@@ -41,7 +43,7 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   }
   
   override func loadView() {
-    loadWebView(from: headline)
+    loadWebView(from: viewModel)
   }
   
   func loadWebView(from headline: HeadlineItemViewModel) {
@@ -60,7 +62,7 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   
   @objc func saveItem() {
     do {
-      try Shared.storage.saveHeadline(headline.headline)
+      try Shared.storage.saveHeadline(viewModel.headline)
       self.present(UIAlertController.success(message: "The headline has been saved."), animated: true)
     } catch StoreError.saveFailed(let message) {
       self.present(UIAlertController.errorAlert(title: "Save Failed", message: message), animated: true)
@@ -71,7 +73,7 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   
   @objc func deleteItem() {
     let confirmation = UIAlertController.confirmDelete {
-      Shared.storage.deleteHeadline(self.headline.headline)
+      Shared.storage.deleteHeadline(self.viewModel.headline)
       self.navigationController?.popViewController(animated: true)
     }
     self.present(confirmation, animated: true)

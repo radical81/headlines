@@ -29,12 +29,7 @@ class HeadlinesViewModel {
   /// The collection of headlines if they are loaded.
   var headlines: [Headline] = []
 
-  // MARK: - Computed Properties
-  /// The collection of headlines represented by individual view models for each headline.
-  var headlineViewModels: [HeadlineItemViewModel] {
-    headlines.map { HeadlineItemViewModel($0) }
-  }
-  
+  // MARK: - Computed Properties  
   /// Retrieve any error messages.
   var errorMessage: ErrorWithMessage? {
     switch dataForLoading {

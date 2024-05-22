@@ -8,9 +8,11 @@ import UIKit
 /// The collection view cell for the fresh headlines.
 class HeadlineItemCollectionViewCell: UICollectionViewCell {
   // MARK: - Data source
-  var viewModel: HeadlineItemViewModel? {
+  var headline: Headline? {
     didSet {
-      headlineItemView.viewModel = viewModel
+      if let headline = headline {
+        headlineItemView.viewModel = HeadlineItemViewModel(headline)
+      }
     }
   }
   

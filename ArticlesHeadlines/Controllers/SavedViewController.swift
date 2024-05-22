@@ -29,14 +29,14 @@ class SavedViewController: UITableViewController {
   }
   
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return viewModel.headlineViewModels.count
+    return viewModel.headlines.count
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "SavedHeadlinesList", for: indexPath) as? HeadlineItemTableViewCell else {
       return UITableViewCell()
     }
-    cell.viewModel = viewModel.headlineViewModels[indexPath.row]
+    cell.headline = viewModel.headlines[indexPath.row]
     return cell
   }
      
@@ -72,7 +72,7 @@ class SavedViewController: UITableViewController {
 
   /// Row selection
   override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let article = ArticleViewController(viewModel.headlineViewModels[indexPath.row])
+    let article = ArticleViewController(viewModel.headlines[indexPath.row])
     article.showDeleteButton = true
     self.navigationController?.pushViewController(article, animated: true)
   }
