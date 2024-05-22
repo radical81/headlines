@@ -1,5 +1,4 @@
-import XCTest
-@testable import ArticlesHeadlines
+import Foundation
 
 struct MockNews: NewsRetriever {
   let mockNews = """
