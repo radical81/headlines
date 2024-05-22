@@ -9,6 +9,12 @@ import Foundation
 
 /// View model representing the collection of headlines.
 class HeadlinesViewModel {
+  var source: NewsRetriever
+  
+  init(source: NewsRetriever) {
+    self.source = source
+  }
+  
   var dataForLoading: Loadable<[Headline]> = .notLoaded {
     didSet {
       switch dataForLoading {
@@ -46,6 +52,6 @@ class HeadlinesViewModel {
   /// Fetch data
   func fetchHeadlines() async {
     dataForLoading = .loading
-    dataForLoading = await Shared.news.fetchHeadlines([])
+    dataForLoading = await source.fetchHeadlines([])
   }
 }

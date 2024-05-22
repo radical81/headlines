@@ -14,7 +14,7 @@ class HeadlinesViewController: UIViewController {
   var headlinesList: HeadlinesListCollectionView?
   
   /// The view model for this collection of headlines.
-  var viewModel: HeadlinesViewModel = HeadlinesViewModel()
+  var viewModel: HeadlinesViewModel = HeadlinesViewModel(source: Shared.news)
   
   override func viewDidLoad() {
     super.viewDidLoad()
