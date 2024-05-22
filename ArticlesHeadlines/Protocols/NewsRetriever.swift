@@ -12,7 +12,7 @@ protocol NewsRetriever {
   /// News source base URL.
   var baseUrl: String { get }
   /// Fetches the headlines.
-  func fetchHeadlines(_ sources: [Source]) async -> Loadable<[Headline]>
+  func fetchHeadlines() async -> Loadable<[Headline]>
   /// Retrieve news sources.
   func fetchSources() async -> Loadable<[Source]>
 }

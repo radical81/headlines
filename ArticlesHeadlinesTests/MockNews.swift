@@ -40,7 +40,7 @@ struct MockNews: NewsRetriever {
   
   var baseUrl: String { "" }
   
-  func fetchHeadlines(_ sources: [ArticlesHeadlines.Source]) async -> ArticlesHeadlines.Loadable<[ArticlesHeadlines.Headline]> {
+  func fetchHeadlines() async -> ArticlesHeadlines.Loadable<[ArticlesHeadlines.Headline]> {
     let decoder = JSONDecoder()
     let data = mockNews.data(using: .utf8)!
     let response = try? decoder.decode(Response.self, from: data)

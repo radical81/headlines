@@ -52,6 +52,6 @@ class HeadlinesViewModel {
   /// Fetch data
   func fetchHeadlines() async {
     dataForLoading = .loading
-    dataForLoading = await source.fetchHeadlines([])
+    dataForLoading = await source.fetchHeadlines()
   }
 }

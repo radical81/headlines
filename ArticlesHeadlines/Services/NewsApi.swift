@@ -19,7 +19,7 @@ struct NewsApi: NewsRetriever {
   }
   
   /// Fetches the headlines.
-  func fetchHeadlines(_ sources: [Source]) async -> Loadable<[Headline]> {
+  func fetchHeadlines() async -> Loadable<[Headline]> {
     guard var components = URLComponents(string: baseUrl + "/top-headlines") else {
       return .failed(APIError.malformed("Invalid URL."))
     }
