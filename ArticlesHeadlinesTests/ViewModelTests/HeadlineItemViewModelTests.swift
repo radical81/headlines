@@ -6,6 +6,7 @@
 import XCTest
 @testable import ArticlesHeadlines
 
+/// Test the view model for a single headline item in the list.
 final class HeadlineItemViewModelTests: XCTestCase {
   var headline = Headline(title: "Extra extra",
                           description: "Urgent news read all about it.",

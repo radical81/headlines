@@ -9,7 +9,7 @@ final class HeadlinesUITests: XCTestCase {
     continueAfterFailure = false
   }
   
-  func testHeadlinesDisplay() throws {    
+  func testHeadlinesListTitle() throws {    
     app.launch()
     let heading = app.navigationBars["Headlines"].staticTexts["Headlines"]
     XCTAssertTrue(heading.exists)

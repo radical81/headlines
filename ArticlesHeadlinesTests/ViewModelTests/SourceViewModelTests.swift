@@ -6,6 +6,7 @@
 import XCTest
 @testable import ArticlesHeadlines
 
+/// Test view model for the news sources screen.
 final class SourceViewModelTests: XCTestCase {
   var source = Source(id: "123",
                       name: "ABC news",

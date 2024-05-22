@@ -6,6 +6,7 @@
 import XCTest
 @testable import ArticlesHeadlines
 
+/// Test view model for the list of headlines.
 final class HeadlinesViewModelTests: XCTestCase {
   func testComputedProperties() async throws {
     let viewModel = HeadlinesViewModel(source: MockNews())
