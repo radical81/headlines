@@ -1,14 +1,7 @@
-//
-//  HeadlinesViewModel.swift
-//  ArticlesHeadlines
-//
-//  Created by Rex Jason Alobba on 19/2/2024.
-//
-
 import Foundation
 
-/// View model representing the collection of headlines.
-class HeadlinesViewModel {
+/// View model representing the saved headlines.
+class SavedHeadlinesViewModel {
   var dataForLoading: Loadable<[Headline]> = .notLoaded {
     didSet {
       switch dataForLoading {
@@ -43,9 +36,18 @@ class HeadlinesViewModel {
   }
 
   // MARK: - Methods
-  /// Fetch data
-  func fetchHeadlines() async {
-    dataForLoading = .loading
-    dataForLoading = await Shared.news.fetchHeadlines([])
+  /// Fetch saved headlines from storage.
+  func fetchSavedHeadlines() {
+    headlines = []
+    let savedHeadlines = Shared.storage.savedHeadlines
+    savedHeadlines.forEach { headline in
+      headlines.append(headline)
+    }
+  }
+  
+  /// Delete row and remove from store.
+  func delete(at indexPath: IndexPath) {
+    Shared.storage.deleteHeadline(headlines[indexPath.row])
+    headlines.remove(at: indexPath.row)
   }
 }

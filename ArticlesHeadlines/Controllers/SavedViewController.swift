@@ -8,7 +8,7 @@ import UIKit
 class SavedViewController: UITableViewController {
 
   /// The view model for this collection of headlines.
-  var viewModel: HeadlinesViewModel = HeadlinesViewModel()
+  var viewModel: SavedHeadlinesViewModel = SavedHeadlinesViewModel()
 
   
   override func viewDidLoad() {
