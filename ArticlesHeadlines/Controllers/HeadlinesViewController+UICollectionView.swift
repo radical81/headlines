@@ -33,6 +33,7 @@ extension HeadlinesViewController: UICollectionViewDataSource, UICollectionViewD
       // Dismiss the refresh control.
       DispatchQueue.main.async {
         self.headlinesList?.refreshControl?.endRefreshing()
+        self.headlinesList?.reloadData()
       }
     }
   }
