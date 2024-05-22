@@ -2,7 +2,7 @@ import XCTest
 @testable import ArticlesHeadlines
 
 struct MockNews: NewsRetriever {
-  let fakeNews = """
+  let mockNews = """
   {
     "status": "ok",
     "totalResults": 40,
@@ -42,7 +42,7 @@ struct MockNews: NewsRetriever {
   
   func fetchHeadlines(_ sources: [ArticlesHeadlines.Source]) async -> ArticlesHeadlines.Loadable<[ArticlesHeadlines.Headline]> {
     let decoder = JSONDecoder()
-    let data = fakeNews.data(using: .utf8)!
+    let data = mockNews.data(using: .utf8)!
     let response = try? decoder.decode(Response.self, from: data)
     return .loaded(response?.articles ?? [])
   }
