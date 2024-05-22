@@ -6,6 +6,7 @@
 import Foundation
 
 /// Model to capture the responses from the API.
+/// For the sake of this time-limited test, we will use the Headline model and assume it is identical with API's data.
 struct Response: Decodable {
   /// News articles
   var articles: [Headline]?

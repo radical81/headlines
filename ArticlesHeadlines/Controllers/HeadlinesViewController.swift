@@ -5,15 +5,13 @@
 
 import UIKit
 
+/// Lists the headlines available to the user for viewing.
 class HeadlinesViewController: UIViewController {
   
-//  /// The API service retrieve the headlines.
-//  let api: NewsRetriever
-
   /// The list of headlines, a collection view.
   var headlinesList: HeadlinesListCollectionView?
   
-  /// The view model for this collection of headlines.
+  /// The view model for this collection of headlines. Inject news source API on initialisation.
   var viewModel: HeadlinesViewModel = HeadlinesViewModel(source: Shared.news)
   
   override func viewDidLoad() {

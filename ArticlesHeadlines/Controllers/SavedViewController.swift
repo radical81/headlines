@@ -5,6 +5,7 @@
 
 import UIKit
 
+/// List of previously saved headlines stored persistently in the app.
 class SavedViewController: UITableViewController {
 
   /// The view model for this collection of headlines.

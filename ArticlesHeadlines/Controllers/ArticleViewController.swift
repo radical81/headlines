@@ -6,6 +6,7 @@
 import UIKit
 import WebKit
 
+/// Views the selected article in a web view.
 class ArticleViewController: UIViewController, WKUIDelegate {
 
   /// The data source

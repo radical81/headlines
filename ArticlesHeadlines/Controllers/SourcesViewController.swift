@@ -5,6 +5,8 @@
 
 import UIKit
 
+/// List of news sources from which to retrieve headlines.
+/// The user can select or deselect which sources to get news from.
 class SourcesViewController: UITableViewController {
   
   /// The data source for the list.
