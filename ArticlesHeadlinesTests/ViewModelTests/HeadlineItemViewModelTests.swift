@@ -1,12 +1,12 @@
 //
-//  HeadlineViewModelTests.swift
+//  HeadlineItemViewModelTests.swift
 //  ArticlesHeadlinesTests
 //
 
 import XCTest
 @testable import ArticlesHeadlines
 
-final class HeadlineViewModelTests: XCTestCase {
+final class HeadlineItemViewModelTests: XCTestCase {
   var headline = Headline(title: "Extra extra",
                           description: "Urgent news read all about it.",
                           author: "Rex",
