@@ -9,7 +9,7 @@ import WebKit
 class ArticleViewController: UIViewController, WKUIDelegate {
 
   /// The data source
-  var headline: HeadlineViewModel
+  var headline: HeadlineItemViewModel
   
   /// Save button enabling
   var showSaveButton: Bool = false
@@ -17,7 +17,7 @@ class ArticleViewController: UIViewController, WKUIDelegate {
   /// Delete button enabling
   var showDeleteButton: Bool = false
   
-  init(_ headline: HeadlineViewModel) {
+  init(_ headline: HeadlineItemViewModel) {
     self.headline = headline
     super.init(nibName: nil, bundle: nil)
   }
@@ -43,7 +43,7 @@ class ArticleViewController: UIViewController, WKUIDelegate {
     loadWebView(from: headline)
   }
   
-  func loadWebView(from headline: HeadlineViewModel) {
+  func loadWebView(from headline: HeadlineItemViewModel) {
     let webConfiguration = WKWebViewConfiguration()
     let webView = WKWebView(frame: .zero, configuration: webConfiguration)
     webView.uiDelegate = self

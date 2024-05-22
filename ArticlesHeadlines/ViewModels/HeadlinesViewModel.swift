@@ -25,8 +25,8 @@ class HeadlinesViewModel {
 
   // MARK: - Computed Properties
   /// The collection of headlines represented by individual view models for each headline.
-  var headlineViewModels: [HeadlineViewModel] {
-    headlines.map { HeadlineViewModel($0) }
+  var headlineViewModels: [HeadlineItemViewModel] {
+    headlines.map { HeadlineItemViewModel($0) }
   }
   
   /// Retrieve any error messages.

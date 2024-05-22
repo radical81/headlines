@@ -1,13 +1,8 @@
-//
-//  HeadlineViewModel.swift
-//  ArticlesHeadlines
-//
-
 import Foundation
 import UIKit
 
 /// View model representing one item in the list of headlines.
-struct HeadlineViewModel {
+struct HeadlineItemViewModel {
   var headline: Headline
   var errorMessage: String = ""
   

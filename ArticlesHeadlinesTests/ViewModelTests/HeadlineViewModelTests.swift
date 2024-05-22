@@ -14,7 +14,7 @@ final class HeadlineViewModelTests: XCTestCase {
                           urlToImage: "www.google.com")
   
   func testComputedProperties() throws {
-    let viewModel = HeadlineViewModel(headline)
+    let viewModel = HeadlineItemViewModel(headline)
     XCTAssertEqual(viewModel.title, headline.title, "Titles don't match")
     XCTAssertEqual(viewModel.description, headline.description, "Descriptions don't match")
     XCTAssertEqual(viewModel.author, headline.author, "Authors don't match")

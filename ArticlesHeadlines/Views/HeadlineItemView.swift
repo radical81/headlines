@@ -10,7 +10,7 @@ import UIKit
 class HeadlineItemView: UIView {
   
   // MARK: - Data source
-  var viewModel: HeadlineViewModel? {
+  var viewModel: HeadlineItemViewModel? {
     didSet {
       updateWithData()
     }
