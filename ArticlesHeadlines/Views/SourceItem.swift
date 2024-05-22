@@ -40,9 +40,9 @@ class SourceItem: UITableViewCell {
   
   func initSubviews() {
     decorateName()
-    decorateSelected()
-    decorateHStack()
     addSubview(hStack)
+    decorateHStack()
+    decorateSelected()
   }
   
   func decorateCell() {
@@ -50,7 +50,6 @@ class SourceItem: UITableViewCell {
   }
   
   func decorateHStack() {
-    hStack.frame = CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height)
     hStack.isLayoutMarginsRelativeArrangement = true
     hStack.layoutMargins = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 10)
     hStack.axis = .horizontal
@@ -58,10 +57,22 @@ class SourceItem: UITableViewCell {
     hStack.alignment = .leading
     hStack.addArrangedSubview(name)
     hStack.addArrangedSubview(tick)
+    hStack.translatesAutoresizingMaskIntoConstraints = false
+    let constraints = [
+      hStack.topAnchor.constraint(equalTo: topAnchor),
+      hStack.bottomAnchor.constraint(equalTo: bottomAnchor),
+      hStack.leadingAnchor.constraint(equalTo: leadingAnchor),
+      hStack.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+    ]
+    NSLayoutConstraint.activate(constraints)
   }
 
   func decorateSelected() {
-    tick.frame = CGRect(x: 0, y: 0, width: 20, height: 20)
+    tick.translatesAutoresizingMaskIntoConstraints = false
+    let constraints = [
+      tick.centerXAnchor.constraint(equalTo: hStack.trailingAnchor, constant: -30)
+    ]
+    NSLayoutConstraint.activate(constraints)
   }
   
   func decorateName() {
