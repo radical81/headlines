@@ -17,7 +17,7 @@ final class HeadlinesUITests: XCTestCase {
     let savedTab = tabBar.buttons["Saved"]
     XCTAssertTrue(headlinesTab.exists, "Headlines tab is missing.")
     XCTAssertTrue(sourcesTab.exists, "Sources tab is missing.")
-    XCTAssertTrue(savedTab.exists, "Savbed tab is missing.")
+    XCTAssertTrue(savedTab.exists, "Saved tab is missing.")
   }
   
   /// Check navigation header.
