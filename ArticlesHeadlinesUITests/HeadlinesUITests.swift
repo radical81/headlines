@@ -23,8 +23,8 @@ final class HeadlinesUITests: XCTestCase {
   /// Check navigation header.
   func testHeadlinesListTitle() throws {
     app.launch()
-    let heading = app.navigationBars["Headlines"].staticTexts["Headlines"]
-    XCTAssertTrue(heading.exists)
+    let navTitle = app.navigationBars["Headlines"].staticTexts["Headlines"]
+    XCTAssertTrue(navTitle.exists, "Navigation title is missing.")
   }
   
   /// Check first headline item.
