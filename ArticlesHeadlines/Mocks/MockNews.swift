@@ -42,8 +42,10 @@ struct MockNews: NewsRetriever {
   func fetchHeadlines() async -> ArticlesHeadlines.Loadable<[ArticlesHeadlines.Headline]> {
     let decoder = JSONDecoder()
     let data = mockNews.data(using: .utf8)!
-    let response = try? decoder.decode(Response.self, from: data)
-    return .loaded(response?.articles ?? [])
+    guard let response = try? decoder.decode(Response.self, from: data) else {
+      return .failed(APIError.network("Missing data from the API."))
+    }
+    return .loaded(response.articles ?? [])
   }
   
   func fetchSources() async -> ArticlesHeadlines.Loadable<[ArticlesHeadlines.Source]> {
