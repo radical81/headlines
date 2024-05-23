@@ -1,12 +1,12 @@
 //
-//  SourceViewModel.swift
+//  SourceItemViewModel.swift
 //  ArticlesHeadlines
 //
 
 import Foundation
 
 /// View model for the source item display in the list of sources.
-struct SourceViewModel {
+struct SourceItemViewModel {
   /// The data source
   var source: Source
   

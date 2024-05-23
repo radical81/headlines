@@ -15,7 +15,7 @@ final class SourceViewModelTests: XCTestCase {
                       selected: true)
   
   func testComputedProperties() throws {
-    let viewModel = SourceViewModel(source)
+    let viewModel = SourceItemViewModel(source)
     XCTAssertEqual(viewModel.id, source.id, "ID's don't match")
     XCTAssertEqual(viewModel.name, source.name, "Names don't match")
     XCTAssertEqual(viewModel.isSelected, source.selected, "Selected status doesn't match")

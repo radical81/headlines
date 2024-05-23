@@ -23,7 +23,7 @@ class SourcesViewController: UITableViewController {
           }
         }
         sources = freshData.map {
-          SourceViewModel($0)
+          SourceItemViewModel($0)
         }
       default:
         break
@@ -32,7 +32,7 @@ class SourcesViewController: UITableViewController {
   }
 
   /// The view model instances for the list.
-  var sources: [SourceViewModel] = [] {
+  var sources: [SourceItemViewModel] = [] {
     didSet {
       tableView.reloadData()
     }

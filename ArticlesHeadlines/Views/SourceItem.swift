@@ -9,7 +9,7 @@ import UIKit
 class SourceItem: UITableViewCell {
   
   //MARK: - Data Source
-  var source: SourceViewModel? {
+  var source: SourceItemViewModel? {
     didSet {
       updateWithData()
     }
