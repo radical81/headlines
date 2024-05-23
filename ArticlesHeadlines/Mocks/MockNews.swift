@@ -30,7 +30,7 @@ struct MockNews: NewsRetriever {
       "url": "http://www.afr.com/chanticleer/9-signs-there-s-a-mini-melt-up-on-the-asx-and-12-stocks-to-buy-20240521-p5jf8u",
       "urlToImage": "https://static.ffx.io/images/$zoom_0.6429%2C$multiply_2%2C$ratio_1.777778%2C$width_1059%2C$x_0%2C$y_0/t_crop_custom/c_scale%2Cw_800%2Cq_88%2Cf_jpg/t_afr_opinion_no_age_social_wm/a3930df785ea6753e7f2cee758600fedefe7f2d9",
       "publishedAt": "2024-05-20T23:36:11Z",
-      "content": "Another day, another set of record highs on Wall Street and another bear throws in the towel.\r\nFor months, Morgan Stanley strategist Michael Wilson has been steadfast in his view that markets had bec… [+190 chars]"
+      "content": "Another day, another set of record highs on Wall Street and another bear throws in the towel. For months, Morgan Stanley strategist Michael Wilson has been steadfast in his view that markets had bec… [+190 chars]"
       }
     ]
   }
