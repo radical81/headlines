@@ -9,7 +9,14 @@ import UIKit
 class SourceItem: UITableViewCell {
   
   //MARK: - Data Source
-  var source: SourceItemViewModel? {
+  var source: Source? {
+    didSet {
+      if let source = source {
+        viewModel = SourceItemViewModel(source)
+      }
+    }
+  }
+  var viewModel: SourceItemViewModel? {
     didSet {
       updateWithData()
     }
@@ -32,9 +39,9 @@ class SourceItem: UITableViewCell {
   }
     
   func updateWithData() {
-    if let source = source {
-      name.text = source.name
-      tick.isHidden =  !source.isSelected
+    if let viewModel = viewModel {
+      name.text = viewModel.name
+      tick.isHidden =  !viewModel.isSelected
     }
   }
   
